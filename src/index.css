@@ -132,13 +132,161 @@ html {
   animation-play-state: paused;
 }
 
+@keyframes orb-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes orb-shadow-pulse {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(0.86);
+    opacity: 0.35;
+  }
+}
+
+@keyframes orb-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0vh) translateX(0px) scale(0.88);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--bubble-opacity, 0.6);
+  }
+  50% {
+    transform: translateY(-58vh) translateX(var(--bubble-sway, 16px)) scale(1.04);
+    opacity: var(--bubble-opacity, 0.6);
+  }
+  88% {
+    opacity: var(--bubble-opacity, 0.6);
+  }
+  100% {
+    transform: translateY(-115vh) translateX(0px) scale(0.94);
+    opacity: 0;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+@keyframes packet-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink-cursor {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-orb-bounce {
+  animation: orb-bounce var(--orb-duration, 3.4s) ease-in-out var(--orb-delay, 0s) infinite;
+}
+
+.animate-orb-shadow {
+  animation: orb-shadow-pulse var(--orb-duration, 3.4s) ease-in-out var(--orb-delay, 0s) infinite;
+}
+
+.animate-orb-spin {
+  animation: orb-spin 16s linear infinite;
+}
+
+.animate-bubble-rise {
+  animation: bubble-rise var(--bubble-duration, 18s) linear var(--bubble-delay, 0s) infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle var(--float-duration, 7.5s) ease-in-out infinite;
+}
+
+.animate-packet-slide {
+  animation: packet-slide 1.8s linear var(--packet-delay, 0s) infinite;
+}
+
+.animate-page-in {
+  animation: page-fade-in 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-blink-cursor {
+  animation: blink-cursor 0.9s step-end infinite;
+}
+
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease;
+}
+
+.tilt-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  z-index: 10;
+}
+
+.tilt-card:hover .tilt-sheen {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-marquee-left,
-  .animate-marquee-right {
-    animation: none;
+  .animate-marquee-right,
+  .animate-orb-bounce,
+  .animate-orb-shadow,
+  .animate-orb-spin,
+  .animate-bubble-rise,
+  .animate-float-gentle,
+  .animate-packet-slide,
+  .animate-page-in,
+  .animate-blink-cursor {
+    animation: none !important;
   }
   *,
   *::before,

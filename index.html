@@ -11,12 +11,12 @@
     <title>Laila Mariel Enarne — Software &amp; Web Portfolio</title>
     <meta
       name="description"
-      content="Personal software engineering and CIT 240 portfolio of Laila Mariel Enarne, showcasing full-stack web systems, open-source accessibility tools, and capstone architecture."
+      content="Personal software engineering and CIT 240 portfolio of Laila Mariel Enarne, showcasing full-stack web systems, FaithPoint capstone documentation, and resume."
     />
     <meta property="og:title" content="Laila Mariel Enarne — Software & Web Portfolio" />
     <meta
       property="og:description"
-      content="Full-stack web systems, accessible interfaces, and CIT 240 capstone deliverables built with semantic HTML5, responsive CSS, and modern TypeScript."
+      content="Full-stack web systems, accessible interfaces, and CIT 240 capstone deliverables built with semantic HTML5, responsive CSS, and vanilla JavaScript."
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -26,6 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/src/index.css" />
     <script>
       (function () {
         try {
@@ -40,7 +41,1122 @@
     </script>
   </head>
   <body class="bg-[#FDF7F8] text-[#1F171A] dark:bg-[#140F12] dark:text-[#F8EFF2] antialiased selection:bg-[#BE4B72] selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="relative min-h-screen flex flex-col">
+      <!-- Ambient Pastel Blueprint & Floating Bubbles Backdrop -->
+      <div aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none">
+        <div class="absolute inset-0 bg-pastel-blueprint opacity-80 dark:opacity-65"></div>
+        <div class="animate-float-gentle absolute -top-36 -left-24 w-[560px] h-[560px] rounded-full bg-[radial-gradient(circle,rgba(244,180,203,0.42)_0%,rgba(244,180,203,0.12)_48%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(190,75,114,0.22)_0%,rgba(190,75,114,0.06)_50%,transparent_72%)]" style="--float-duration:18s"></div>
+        <div class="animate-float-gentle absolute top-1/4 -right-32 w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(196,209,240,0.42)_0%,rgba(235,196,229,0.18)_46%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(61,78,129,0.22)_0%,rgba(122,73,136,0.08)_48%,transparent_72%)]" style="--float-duration:22s"></div>
+        <div class="animate-float-gentle absolute -bottom-40 left-1/3 w-[540px] h-[540px] rounded-full bg-[radial-gradient(circle,rgba(190,228,221,0.38)_0%,rgba(250,206,220,0.14)_50%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(47,122,112,0.16)_0%,rgba(242,167,192,0.04)_50%,transparent_72%)]" style="--float-duration:20s"></div>
+
+        <!-- Floating Translucent Pastel Bubbles -->
+        <div class="animate-bubble-rise absolute -bottom-24 left-[6%] w-12 h-12 rounded-full border border-[#E2A9BD]/75 dark:border-[#F2A7C0]/30 bg-gradient-to-br from-white/75 via-[#FBDCE7]/40 to-transparent" style="--bubble-duration:18s; --bubble-delay:-2s; --bubble-sway:16px; --bubble-opacity:0.68;"></div>
+        <div class="animate-bubble-rise absolute -bottom-24 left-[18%] w-8 h-8 rounded-full border border-[#B9C5E6]/75 dark:border-[#8FA4E8]/30 bg-gradient-to-br from-white/75 via-[#E4EBF9]/42 to-transparent" style="--bubble-duration:15s; --bubble-delay:-7s; --bubble-sway:-14px; --bubble-opacity:0.62;"></div>
+        <div class="animate-bubble-rise absolute -bottom-24 left-[36%] w-16 h-16 rounded-full border border-[#D0B8DF]/75 dark:border-[#D5A6E6]/30 bg-gradient-to-br from-white/75 via-[#EFE2F8]/42 to-transparent" style="--bubble-duration:24s; --bubble-delay:-11s; --bubble-sway:18px; --bubble-opacity:0.48;"></div>
+        <div class="animate-bubble-rise absolute -bottom-24 left-[62%] w-10 h-10 rounded-full border border-[#B4DBD4]/75 dark:border-[#7ED3C6]/30 bg-gradient-to-br from-white/75 via-[#E1F4F0]/42 to-transparent" style="--bubble-duration:19s; --bubble-delay:-5s; --bubble-sway:-12px; --bubble-opacity:0.58;"></div>
+        <div class="animate-bubble-rise absolute -bottom-24 left-[82%] w-14 h-14 rounded-full border border-[#E2A9BD]/75 dark:border-[#F2A7C0]/30 bg-gradient-to-br from-white/75 via-[#FBDCE7]/40 to-transparent" style="--bubble-duration:21s; --bubble-delay:-9s; --bubble-sway:14px; --bubble-opacity:0.6;"></div>
+        <div class="animate-bubble-rise absolute -bottom-24 left-[92%] w-7 h-7 rounded-full border border-[#B9C5E6]/75 dark:border-[#8FA4E8]/30 bg-gradient-to-br from-white/75 via-[#E4EBF9]/42 to-transparent" style="--bubble-duration:14s; --bubble-delay:-4s; --bubble-sway:-10px; --bubble-opacity:0.66;"></div>
+
+        <!-- Desktop Margin Wireframe Badges -->
+        <div class="hidden xl:block">
+          <div class="animate-float-gentle absolute top-44 left-7 w-14 h-14 rounded-2xl border border-[#E5C6D0] dark:border-[#3D2C35] bg-white/55 dark:bg-[#1D161A]/55 flex items-center justify-center font-mono-code text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]" style="--float-duration:7s">&lt;/&gt;</div>
+          <div class="animate-float-gentle absolute bottom-32 left-10 w-12 h-12 rounded-xl border border-[#C4D1F0] dark:border-[#333D5C] bg-white/55 dark:bg-[#1D161A]/55 flex items-center justify-center font-mono-code text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8]" style="--float-duration:8.5s">{ }</div>
+          <div class="animate-float-gentle absolute top-64 right-8 w-14 h-14 rounded-2xl border border-[#BEE4DD] dark:border-[#2A4945] bg-white/55 dark:bg-[#1D161A]/55 flex items-center justify-center font-mono-code text-xs font-semibold text-[#2F7A70] dark:text-[#7ED3C6]" style="--float-duration:7.8s">[ ]</div>
+        </div>
+      </div>
+
+      <div class="relative z-10 flex-1 flex flex-col">
+        <!-- Sticky Site Header -->
+        <header class="sticky top-0 z-40 bg-white/85 dark:bg-[#140F12]/90 backdrop-blur-md border-b border-[#E5C6D0] dark:border-[#33262D] transition-colors duration-200">
+          <div aria-hidden="true" class="h-[2.5px] w-full bg-gradient-to-r from-[#BE4B72] via-[#7A4988] to-[#3D4E81] dark:from-[#F2A7C0] dark:via-[#D5A6E6] dark:to-[#8FA4E8]"></div>
+          <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#BE4B72] focus:text-white focus:rounded-md focus:text-sm focus:font-medium">
+            Skip to main content
+          </a>
+
+          <div class="portfolio-container h-16 flex items-center justify-between gap-8">
+            <a href="#about" data-nav-page="about" class="inline-flex items-center gap-2.5 sm:gap-3 font-display text-base sm:text-lg font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2] whitespace-nowrap shrink-0 hover:text-[#BE4B72] dark:hover:text-[#F2A7C0] transition-colors">
+              <span class="relative inline-flex items-center justify-center w-14 h-10 rounded-xl bg-gradient-to-br from-[#BE4B72] via-[#7A4988] to-[#3D4E81] p-[1.5px] shadow-sm shrink-0">
+                <span class="w-full h-full rounded-[10.5px] bg-[#090708] overflow-hidden flex items-center justify-center p-0.5">
+                  <img src="/assets/aistudio/Laila_Mariel_Enarne_Tech_Monogram_04535ec8.png" alt="Laila Mariel Enarne LME logo" class="w-full h-full object-contain" />
+                </span>
+              </span>
+              <span>Laila Mariel Enarne</span>
+            </a>
+
+            <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-5 lg:gap-7">
+              <a href="#about" data-nav-page="about" data-nav-style="desktop">About</a>
+              <a href="#skills" data-nav-page="skills" data-nav-style="desktop">Skills</a>
+              <a href="#projects" data-nav-page="projects" data-nav-style="desktop">Projects</a>
+              <a href="#capstone" data-nav-page="capstone" data-nav-style="desktop">Capstone</a>
+              <a href="#resume" data-nav-page="resume" data-nav-style="desktop">Resume</a>
+              <a href="#contact" data-nav-page="contact" data-nav-style="desktop">Contact</a>
+            </nav>
+
+            <div class="flex items-center shrink-0">
+              <a href="#contact" data-nav-page="contact" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#BE4B72] via-[#984A7F] to-[#3D4E81] hover:from-[#A63D61] hover:to-[#32416E] rounded-xl shadow-sm transition-all duration-150 whitespace-nowrap shrink-0">
+                <span>Get in Touch</span>
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <button id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation-drawer" aria-label="Open navigation menu" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-[#EAD6DC] dark:border-[#33262D] text-[#1F171A] dark:text-[#F8EFF2] hover:bg-[#FAF0F2] dark:hover:bg-[#1D161A] transition-colors">
+                ☰
+              </button>
+            </div>
+          </div>
+
+          <div id="mobile-navigation-drawer" class="hidden md:hidden absolute top-[66px] inset-x-0 bg-[#FDF7F8] dark:bg-[#140F12] border-b border-[#EAD6DC] dark:border-[#33262D] shadow-lg">
+            <nav aria-label="Mobile navigation" class="portfolio-container py-4 flex flex-col gap-1">
+              <a href="#about" data-nav-page="about" data-nav-style="mobile">About</a>
+              <a href="#skills" data-nav-page="skills" data-nav-style="mobile">Skills</a>
+              <a href="#projects" data-nav-page="projects" data-nav-style="mobile">Projects</a>
+              <a href="#capstone" data-nav-page="capstone" data-nav-style="mobile">Capstone</a>
+              <a href="#resume" data-nav-page="resume" data-nav-style="mobile">Resume</a>
+              <a href="#contact" data-nav-page="contact" data-nav-style="mobile">Contact</a>
+              <a href="#contact" data-nav-page="contact" class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#BE4B72] to-[#3D4E81] rounded-xl">
+                Get in Touch →
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        <!-- Breadcrumb & Dual Theme Switcher Toolbar -->
+        <div class="border-b border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2]/80 dark:bg-[#191216]/90 transition-colors duration-200">
+          <div class="portfolio-container py-2.5 flex flex-wrap items-center justify-between gap-4">
+            <p class="text-xs font-medium text-[#665058] dark:text-[#B59EA7] flex items-center gap-2">
+              <span>Portfolio</span>
+              <span aria-hidden="true" class="text-[#D4B4BF] dark:text-[#4E3944]">/</span>
+              <span id="toolbar-page-label" class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">About &amp; Overview</span>
+            </p>
+
+            <div role="group" aria-label="Theme mode switcher" class="inline-flex items-center p-1 rounded-xl bg-white dark:bg-[#140F12] border border-[#E5C6D0] dark:border-[#3D2C35]">
+              <button type="button" data-theme-set="light" aria-pressed="true" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg">
+                <span>Pink Pastel</span>
+              </button>
+              <button type="button" data-theme-set="dark" aria-pressed="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg">
+                <span>Dark</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main id="main-content" class="flex-1">
+          <!-- ==================== PAGE 1: ABOUT / HERO ==================== -->
+          <section id="page-about" data-page="about" aria-labelledby="hero-heading" class="pb-16 md:pb-20">
+            <div class="relative overflow-hidden border-b border-[#EAD6DC] dark:border-[#33262D] pt-10 pb-14 md:pt-14 md:pb-16">
+              <div class="portfolio-container relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+                  <!-- Hero Left -->
+                  <div class="lg:col-span-7 flex flex-col justify-between gap-8">
+                    <div class="space-y-6">
+                      <div class="flex flex-wrap items-center gap-3">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#E5C6D0] dark:border-[#3D2C35] text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">
+                          <span class="w-2 h-2 rounded-full bg-[#2F7A70] dark:bg-[#7ED3C6]" aria-hidden="true"></span>
+                          <span id="hero-role-ticker">Interactive Browser Apps</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/85 dark:bg-[#1D161A]/85 border border-[#C7D3EA] dark:border-[#333D5C] text-xs font-medium text-[#3D4E81] dark:text-[#8FA4E8]">
+                          <span>Barangay Tampucao, Lambunao, Iloilo</span>
+                        </span>
+                      </div>
+
+                      <h1 id="hero-heading" class="font-display headline-balance text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.05] text-[#1F171A] dark:text-[#F8EFF2]">
+                        <span class="block">Building playful</span>
+                        <span class="block">web experiences and</span>
+                        <span class="block">thoughtful software.</span>
+                      </h1>
+
+                      <p class="text-base md:text-lg leading-relaxed text-[#4D3B42] dark:text-[#D5C2C9] max-w-[65ch]">
+                        I turn ideas into tactile, personality-driven websites that balance charming visual details with fast, accessible performance. I love sweating the small stuff—from custom iconography and micro-interactions to clean, structured code under the hood.
+                      </p>
+
+                      <div class="p-5 rounded-2xl bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] max-w-[65ch]">
+                        <h2 class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] mb-1.5">
+                          Career Objective · West Visayas State University - Lambunao Campus · CIT 240 Portfolio
+                        </h2>
+                        <p class="text-sm md:text-base leading-relaxed text-[#4D3B42] dark:text-[#D5C2C9]">
+                          Seeking a 2027 software engineering internship or junior web developer role focused on interactive front-end engineering, accessible user interfaces, and dependable web systems.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3.5 pt-1">
+                      <button type="button" data-nav-page="projects" class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#BE4B72] via-[#984A7F] to-[#3D4E81] hover:from-[#A63D61] hover:to-[#32416E] rounded-xl shadow-sm transition-all whitespace-nowrap shrink-0">
+                        <span>Explore Bento Gallery</span>
+                        <span aria-hidden="true">→</span>
+                      </button>
+
+                      <button type="button" data-nav-page="skills" class="inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-[#3D4E81] dark:text-[#8FA4E8] bg-white dark:bg-[#1D161A] border border-[#C7D3EA] dark:border-[#333D5C] hover:border-[#3D4E81] rounded-xl transition-colors whitespace-nowrap shrink-0">
+                        <span>Capabilities Matrix</span>
+                      </button>
+
+                      <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" download="Laila_Mariel_Enarne_CV.pdf" class="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-[#BE4B72] dark:text-[#F2A7C0] bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-xl transition-colors whitespace-nowrap shrink-0">
+                        <span>Download CV</span>
+                      </a>
+
+                      <a href="https://github.com/lailaenarne" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-[#4D3B42] dark:text-[#D5C2C9] bg-white/85 dark:bg-[#1D161A]/85 border border-[#EAD6DC] dark:border-[#33262D] hover:border-[#BE4B72] rounded-xl transition-colors whitespace-nowrap shrink-0">
+                        <span>GitHub ↗</span>
+                      </a>
+
+                      <a href="https://web.facebook.com/khate.lyn.5245" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-[#4D3B42] dark:text-[#D5C2C9] bg-white/85 dark:bg-[#1D161A]/85 border border-[#EAD6DC] dark:border-[#33262D] hover:border-[#2F7A70] rounded-xl transition-colors whitespace-nowrap shrink-0">
+                        <span>Facebook ↗</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Hero Right: 3D-Tilt Framed Portrait -->
+                  <div class="lg:col-span-5 relative">
+                    <div aria-hidden="true" class="hidden sm:block absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-2xl border border-[#C7D3EA] dark:border-[#333D5C] bg-gradient-to-br from-[#EEF2FA]/85 via-[#F5EEF8]/85 to-[#EAF6F3]/85 dark:from-[#1E2438]/75 dark:to-[#192D2A]/75 pointer-events-none"></div>
+                    <div data-tilt="6" class="tilt-card group h-full rounded-2xl border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] bg-white dark:bg-[#1D161A] p-3 flex flex-col shadow-[0_22px_50px_-24px_rgba(61,78,129,0.28)]">
+                      <div class="tilt-sheen" aria-hidden="true"></div>
+                      <figure class="h-full flex flex-col">
+                        <div class="relative flex-1 min-h-[350px] lg:min-h-[430px] rounded-xl overflow-hidden border border-[#EAD6DC] dark:border-[#33262D] bg-gradient-to-b from-[#FAF0F2] via-[#FDF7F8] to-[#EFE5EE] dark:from-[#261B21] dark:via-[#1D161A] dark:to-[#1A1D29]">
+                          <img src="/assets/aistudio/Port_560225e1.png" alt="Professional studio portrait of Laila Mariel Enarne wearing glasses, a white collared shirt, and a black blazer." class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]" />
+                          <div class="absolute bottom-3 left-3 flex items-center gap-2 pointer-events-none">
+                            <span class="px-2.5 py-1.5 rounded-xl bg-white/92 dark:bg-[#1D161A]/92 border border-[#E5C6D0] dark:border-[#3D2C35] text-[11px] font-mono-code font-semibold text-[#BE4B72] dark:text-[#F2A7C0] shadow-sm">&lt;/&gt;</span>
+                            <span class="px-2.5 py-1.5 rounded-xl bg-white/92 dark:bg-[#1D161A]/92 border border-[#C7D3EA] dark:border-[#333D5C] text-[11px] font-mono-code font-semibold text-[#3D4E81] dark:text-[#8FA4E8] shadow-sm">SQL</span>
+                            <span class="px-2.5 py-1.5 rounded-xl bg-white/92 dark:bg-[#1D161A]/92 border border-[#B8DCD5] dark:border-[#2A4945] text-[11px] font-mono-code font-semibold text-[#2F7A70] dark:text-[#7ED3C6] shadow-sm">UI</span>
+                          </div>
+                        </div>
+                        <figcaption class="pt-3 px-1 flex items-center justify-between text-xs text-[#665058] dark:text-[#B59EA7]">
+                          <span class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">Laila Mariel Enarne</span>
+                          <span class="text-[#3D4E81] dark:text-[#8FA4E8] font-medium">BSIT · WVSU Lambunao Campus</span>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4 Stat Cards -->
+                <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                  <div class="bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p class="font-display tabular-nums text-2xl md:text-3xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">8</p>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Live Netlify Projects</p>
+                    </div>
+                    <span class="w-9 h-9 rounded-xl border bg-[#FAF0F2] dark:bg-[#2A1D24] border-[#EAD6DC] dark:border-[#3D2C35] text-[#BE4B72] dark:text-[#F2A7C0] flex items-center justify-center text-xs font-bold shrink-0">08</span>
+                  </div>
+                  <div class="bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p class="font-display tabular-nums text-2xl md:text-3xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">3</p>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Core Portfolio Categories</p>
+                    </div>
+                    <span class="w-9 h-9 rounded-xl border bg-[#EEF2FA] dark:bg-[#1E2438] border-[#C7D3EA] dark:border-[#333D5C] text-[#3D4E81] dark:text-[#8FA4E8] flex items-center justify-center text-xs font-bold shrink-0">03</span>
+                  </div>
+                  <div class="bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p class="font-display tabular-nums text-2xl md:text-3xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">99.2</p>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Avg. Lighthouse Accessibility</p>
+                    </div>
+                    <span class="w-9 h-9 rounded-xl border bg-[#EAF6F3] dark:bg-[#192D2A] border-[#B8DCD5] dark:border-[#2A4945] text-[#2F7A70] dark:text-[#7ED3C6] flex items-center justify-center text-xs font-bold shrink-0">AA</span>
+                  </div>
+                  <div class="bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 flex items-start justify-between gap-3">
+                    <div>
+                      <p class="font-display tabular-nums text-2xl md:text-3xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">2027</p>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">BSIT Expected Graduation</p>
+                    </div>
+                    <span class="w-9 h-9 rounded-xl border bg-[#F5EEF8] dark:bg-[#2A1E30] border-[#D8BEEB] dark:border-[#4A344D] text-[#7A4988] dark:text-[#D5A6E6] flex items-center justify-center text-xs font-bold shrink-0">IT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dual-Track Kinetic Marquee Ribbon -->
+            <div aria-hidden="true" class="kinetic-ribbon border-b border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2] dark:bg-[#191216] py-3.5 overflow-hidden space-y-2">
+              <div class="animate-marquee-left font-display text-xs md:text-sm font-semibold tracking-wide text-[#4D3B42] dark:text-[#D5C2C9]">
+                <div class="flex items-center gap-6 px-3 whitespace-nowrap">
+                  <span>Semantic HTML5 Architecture</span><span class="text-[#BE4B72]">/</span>
+                  <span>Interactive 3D Bento Showcase</span><span class="text-[#3D4E81]">/</span>
+                  <span>PHP &amp; MySQL Web Foundations</span><span class="text-[#2F7A70]">/</span>
+                  <span>FaithPoint Parish Analytics Capstone</span><span class="text-[#7A4988]">/</span>
+                </div>
+                <div class="flex items-center gap-6 px-3 whitespace-nowrap">
+                  <span>Semantic HTML5 Architecture</span><span class="text-[#BE4B72]">/</span>
+                  <span>Interactive 3D Bento Showcase</span><span class="text-[#3D4E81]">/</span>
+                  <span>PHP &amp; MySQL Web Foundations</span><span class="text-[#2F7A70]">/</span>
+                  <span>FaithPoint Parish Analytics Capstone</span><span class="text-[#7A4988]">/</span>
+                </div>
+              </div>
+              <div class="animate-marquee-right text-xs font-mono-code text-[#665058] dark:text-[#A9929B]">
+                <div class="flex items-center gap-6 px-3 whitespace-nowrap">
+                  <span>CIT 240 Deliverables</span><span>·</span>
+                  <span>CSS Grid &amp; Flexbox</span><span>·</span>
+                  <span>Netlify &amp; Vercel Hosting</span><span>·</span>
+                  <span>Git &amp; GitHub Workflows</span><span>·</span>
+                  <span>Pink Pastel &amp; Dark Theme</span><span>·</span>
+                </div>
+                <div class="flex items-center gap-6 px-3 whitespace-nowrap">
+                  <span>CIT 240 Deliverables</span><span>·</span>
+                  <span>CSS Grid &amp; Flexbox</span><span>·</span>
+                  <span>Netlify &amp; Vercel Hosting</span><span>·</span>
+                  <span>Git &amp; GitHub Workflows</span><span>·</span>
+                  <span>Pink Pastel &amp; Dark Theme</span><span>·</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive 3D Workspace -->
+            <div class="portfolio-container mt-12">
+              <section aria-labelledby="studio-3d-heading" class="relative rounded-2xl border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] bg-[#F9EEF2] dark:bg-[#161014] overflow-hidden shadow-[0_24px_60px_-28px_rgba(190,75,114,0.28)]">
+                <div class="pointer-events-none absolute top-4 left-4 right-4 z-10 flex flex-wrap items-start justify-between gap-3">
+                  <div class="pointer-events-auto rounded-xl border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FDF7F8]/92 dark:bg-[#1D161A]/92 px-3.5 py-2.5 shadow-sm">
+                    <p class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">
+                      <span>Interactive 3D Workspace</span>
+                    </p>
+                    <h2 id="studio-3d-heading" class="font-display text-sm sm:text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">
+                      Architectural Tech Orbit &amp; Live Workstation
+                    </h2>
+                    <p class="text-[11px] text-[#665058] dark:text-[#B59EA7]">
+                      Drag to rotate · Scroll to zoom · Explode layers below
+                    </p>
+                  </div>
+
+                  <button type="button" data-nav-page="projects" class="pointer-events-auto hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#C7D3EA] dark:border-[#333D5C] bg-[#FDF7F8]/92 dark:bg-[#1D161A]/92 text-[#3D4E81] dark:text-[#8FA4E8] hover:border-[#BE4B72] transition-colors shadow-sm">
+                    <span>Inspect 8 Projects</span>
+                  </button>
+                </div>
+
+                <div class="relative w-full h-[400px] sm:h-[460px] md:h-[500px]">
+                  <div id="studio-3d-mount" class="w-full h-full cursor-grab active:cursor-grabbing" aria-label="Interactive 3D developer workstation and orbiting technology rings"></div>
+                  <div id="studio-3d-fallback" class="hidden w-full h-full flex flex-col items-center justify-center p-8 text-center">
+                    <p class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Interactive 3D Workspace</p>
+                    <p class="text-xs text-[#665058] dark:text-[#B59EA7] mt-1 max-w-sm">3D hardware context is unavailable in this browser session.</p>
+                  </div>
+                </div>
+
+                <div class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 z-10 w-[min(780px,94%)] flex flex-col items-center gap-2">
+                  <button id="studio-dock-toggle" type="button" aria-expanded="true" class="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-semibold rounded-lg border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FDF7F8]/95 dark:bg-[#1D161A]/95 text-[#4D3B42] dark:text-[#D5C2C9] hover:border-[#BE4B72] transition-colors shadow-sm">
+                    Hide Controls
+                  </button>
+
+                  <div id="studio-dock-panel" class="pointer-events-auto w-full rounded-2xl border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FDF7F8]/95 dark:bg-[#1D161A]/95 px-4 py-3 shadow-lg flex flex-wrap items-center justify-between gap-3">
+                    <div role="group" aria-label="3D camera viewpoints" class="flex flex-wrap items-center gap-1.5">
+                      <button type="button" data-3d-preset="showcase" aria-pressed="true" class="px-2.5 py-1.5 text-xs font-semibold rounded-lg border bg-[#BE4B72] dark:bg-[#F2A7C0] text-white dark:text-[#140F12] border-transparent">Showcase</button>
+                      <button type="button" data-3d-preset="closeup" aria-pressed="false" class="px-2.5 py-1.5 text-xs font-semibold rounded-lg border bg-white dark:bg-[#140F12] text-[#4D3B42] dark:text-[#D5C2C9] border-[#EAD6DC] dark:border-[#33262D]">Workstation</button>
+                      <button type="button" data-3d-preset="top" aria-pressed="false" class="px-2.5 py-1.5 text-xs font-semibold rounded-lg border bg-white dark:bg-[#140F12] text-[#4D3B42] dark:text-[#D5C2C9] border-[#EAD6DC] dark:border-[#33262D]">Top Orbit</button>
+                    </div>
+
+                    <label class="flex items-center gap-2.5 text-xs font-medium text-[#4D3B42] dark:text-[#D5C2C9]">
+                      <span>Explode</span>
+                      <input id="studio-explode-slider" type="range" min="0" max="100" value="15" class="w-24 sm:w-28 accent-[#BE4B72] dark:accent-[#F2A7C0] cursor-pointer" />
+                      <span id="studio-explode-value" class="font-mono-code tabular-nums text-[11px] w-8 text-right text-[#3D4E81] dark:text-[#8FA4E8]">15%</span>
+                    </label>
+
+                    <div class="flex items-center gap-1.5">
+                      <button id="studio-spin-toggle" type="button" aria-pressed="true" class="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg border border-[#EAD6DC] dark:border-[#33262D] bg-white dark:bg-[#140F12] text-[#2F7A70] dark:text-[#7ED3C6]">
+                        Pause Spin
+                      </button>
+                      <button id="studio-3d-reset" type="button" aria-label="Reset 3D view" class="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-[#EAD6DC] dark:border-[#33262D] bg-white dark:bg-[#140F12] text-[#665058] dark:text-[#B59EA7]">
+                        ↺
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Interactive Engineering Workflow -->
+            <div class="portfolio-container mt-10">
+              <div class="bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 md:p-7 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#F4E6EA] dark:border-[#2D2228]">
+                  <div>
+                    <h2 class="font-display text-base md:text-lg font-bold text-[#1F171A] dark:text-[#F8EFF2]">Interactive Engineering Workflow</h2>
+                    <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Click any ICT stage below to inspect how my projects connect end-to-end</p>
+                  </div>
+                  <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#EAF6F3] dark:bg-[#192D2A] border border-[#B8DCD5] dark:border-[#2A4945] text-xs font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">
+                    Full-Stack Pipeline
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <button type="button" data-workflow-node="frontend" aria-pressed="true" class="text-left p-4 rounded-xl border bg-[#FAF0F2] dark:bg-[#2A1D24] border-[#BE4B72] dark:border-[#F2A7C0] transition-all">
+                    <p class="font-mono-code text-[11px] font-semibold text-[#BE4B72] dark:text-[#F2A7C0] mb-2">01</p>
+                    <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Semantic UI</p>
+                    <p class="mt-0.5 text-[11px] font-mono-code text-[#665058] dark:text-[#B59EA7]">HTML5 · CSS Grid · Flexbox</p>
+                  </button>
+                  <button type="button" data-workflow-node="backend" aria-pressed="false" class="text-left p-4 rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#3D4E81] transition-all">
+                    <p class="font-mono-code text-[11px] font-semibold text-[#3D4E81] dark:text-[#8FA4E8] mb-2">02</p>
+                    <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Application Layer</p>
+                    <p class="mt-0.5 text-[11px] font-mono-code text-[#665058] dark:text-[#B59EA7]">JavaScript · TypeScript · PHP</p>
+                  </button>
+                  <button type="button" data-workflow-node="database" aria-pressed="false" class="text-left p-4 rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#7A4988] transition-all">
+                    <p class="font-mono-code text-[11px] font-semibold text-[#7A4988] dark:text-[#D5A6E6] mb-2">03</p>
+                    <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Relational Data</p>
+                    <p class="mt-0.5 text-[11px] font-mono-code text-[#665058] dark:text-[#B59EA7]">MySQL · FaithPoint ERD</p>
+                  </button>
+                  <button type="button" data-workflow-node="deploy" aria-pressed="false" class="text-left p-4 rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#2F7A70] transition-all">
+                    <p class="font-mono-code text-[11px] font-semibold text-[#2F7A70] dark:text-[#7ED3C6] mb-2">04</p>
+                    <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Git &amp; Hosting</p>
+                    <p class="mt-0.5 text-[11px] font-mono-code text-[#665058] dark:text-[#B59EA7]">Git · GitHub · Netlify · Vercel</p>
+                  </button>
+                </div>
+
+                <div class="pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <p id="workflow-detail-text" class="text-xs md:text-sm text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed"></p>
+                  <button id="workflow-target-btn" type="button" data-nav-page="skills" class="inline-flex items-center gap-1.5 text-xs font-semibold hover:underline whitespace-nowrap shrink-0 text-[#BE4B72] dark:text-[#F2A7C0]">
+                    Explore in skills →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Page Explorer Directory -->
+            <div class="portfolio-container mt-12">
+              <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+                <div>
+                  <p class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] mb-1">Interactive Directory</p>
+                  <h2 class="font-display text-2xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">Explore Portfolio Pages</h2>
+                </div>
+                <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Hover cards for 3D perspective · Click to open page</p>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                <div class="lg:col-span-6">
+                  <div data-tilt="5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-2xl">
+                    <div class="tilt-sheen" aria-hidden="true"></div>
+                    <button type="button" data-nav-page="skills" class="w-full h-full text-left p-6 md:p-7 flex flex-col justify-between gap-6 rounded-2xl">
+                      <div>
+                        <p class="font-editorial text-sm font-medium text-[#3D4E81] dark:text-[#8FA4E8] mb-1">01.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2] group-hover:text-[#BE4B72] transition-colors">Interactive Capabilities Matrix</h3>
+                      </div>
+                      <div class="flex items-end justify-between gap-4 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-sm text-[#665058] dark:text-[#B59EA7]">Inspect 3D gadget skill orbs, relational data schemas, and live code previews.</p>
+                        <span class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] whitespace-nowrap">Open →</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                  <div data-tilt="5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-2xl">
+                    <div class="tilt-sheen" aria-hidden="true"></div>
+                    <button type="button" data-nav-page="projects" class="w-full h-full text-left p-6 md:p-7 flex flex-col justify-between gap-6 rounded-2xl">
+                      <div>
+                        <p class="font-editorial text-sm font-medium text-[#BE4B72] dark:text-[#F2A7C0] mb-1">02.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2] group-hover:text-[#BE4B72] transition-colors">Bento Project Gallery</h3>
+                      </div>
+                      <div class="flex items-end justify-between gap-4 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-sm text-[#665058] dark:text-[#B59EA7]">Filter 8 live Netlify builds, inspect stack metrics, and open case study drawers.</p>
+                        <span class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0] whitespace-nowrap">Open →</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                  <div data-tilt="5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-2xl">
+                    <div class="tilt-sheen" aria-hidden="true"></div>
+                    <button type="button" data-nav-page="capstone" class="w-full h-full text-left p-6 md:p-7 flex flex-col justify-between gap-6 rounded-2xl">
+                      <div>
+                        <p class="font-editorial text-sm font-medium text-[#2F7A70] dark:text-[#7ED3C6] mb-1">03.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2] group-hover:text-[#BE4B72] transition-colors">FaithPoint Capstone &amp; CIT 240</h3>
+                      </div>
+                      <div class="flex items-end justify-between gap-4 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-sm text-[#665058] dark:text-[#B59EA7]">Parish analytics research papers, system docs, and deliverables.</p>
+                        <span class="text-xs font-semibold text-[#2F7A70] dark:text-[#7ED3C6] whitespace-nowrap">Open →</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                  <div data-tilt="5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-2xl">
+                    <div class="tilt-sheen" aria-hidden="true"></div>
+                    <button type="button" data-nav-page="resume" class="w-full h-full text-left p-6 md:p-7 flex flex-col justify-between gap-6 rounded-2xl">
+                      <div>
+                        <p class="font-editorial text-sm font-medium text-[#BE4B72] dark:text-[#F2A7C0] mb-1">04.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2] group-hover:text-[#BE4B72] transition-colors">Curriculum Vitae &amp; Resume</h3>
+                      </div>
+                      <div class="flex items-end justify-between gap-4 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-sm text-[#665058] dark:text-[#B59EA7]">Education, immersion, SICT leadership, seminars, references &amp; PDF.</p>
+                        <span class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0] whitespace-nowrap">Open →</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-4">
+                  <div data-tilt="5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] rounded-2xl">
+                    <div class="tilt-sheen" aria-hidden="true"></div>
+                    <button type="button" data-nav-page="contact" class="w-full h-full text-left p-6 md:p-7 flex flex-col justify-between gap-6 rounded-2xl">
+                      <div>
+                        <p class="font-editorial text-sm font-medium text-[#7A4988] dark:text-[#D5A6E6] mb-1">05.</p>
+                        <h3 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2] group-hover:text-[#BE4B72] transition-colors">Direct Contact &amp; Inquiry Form</h3>
+                      </div>
+                      <div class="flex items-end justify-between gap-4 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-sm text-[#665058] dark:text-[#B59EA7]">Send an internship or collaboration inquiry with instant validation.</p>
+                        <span class="text-xs font-semibold text-[#7A4988] dark:text-[#D5A6E6] whitespace-nowrap">Open →</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== PAGE 2: SKILLS ==================== -->
+          <section id="page-skills" data-page="skills" aria-labelledby="skills-heading" class="hidden py-12 md:py-16">
+            <div class="portfolio-container">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10 mb-10 border-b border-[#EAD6DC] dark:border-[#33262D]">
+                <div class="lg:col-span-6 space-y-2">
+                  <p class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8]">Interactive Capabilities Preview Matrix</p>
+                  <h1 id="skills-heading" class="font-display headline-balance text-3xl md:text-4xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">
+                    Technical Skills &amp;<br />Architecture Matrix
+                  </h1>
+                </div>
+                <div class="lg:col-span-6 flex flex-col justify-end gap-4">
+                  <p class="text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed">
+                    Move your pointer across the 3D gadget skill orbs and click any sphere to inspect implementation patterns, live code examples, and related portfolio builds.
+                  </p>
+                  <div role="group" aria-label="Filter capability domains" class="inline-flex flex-wrap items-center gap-1 p-1 bg-[#FAF0F2] dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-xl self-start">
+                    <button type="button" data-skill-domain="all" aria-pressed="true">All Domains</button>
+                    <button type="button" data-skill-domain="languages" aria-pressed="false">Core Languages</button>
+                    <button type="button" data-skill-domain="frameworks-data" aria-pressed="false">Database &amp; Web UI</button>
+                    <button type="button" data-skill-domain="tools-devops" aria-pressed="false">Version Control &amp; Hosting</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div id="skills-categories-container" class="lg:col-span-7 space-y-6"></div>
+
+                <div class="lg:col-span-5 lg:sticky lg:top-24">
+                  <aside aria-label="Capability live preview" class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] rounded-2xl overflow-hidden">
+                    <div id="skill-inspector-header" class="p-6 border-b border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2] dark:bg-[#2A1D24]">
+                      <div class="flex items-center justify-between gap-3 mb-2">
+                        <span class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">Live Capability Preview</span>
+                        <span id="skill-inspector-proficiency" class="text-xs font-mono-code tabular-nums text-[#665058] dark:text-[#B59EA7]"></span>
+                      </div>
+                      <h2 id="skill-inspector-title" class="font-display text-2xl font-bold text-[#1F171A] dark:text-[#F8EFF2]"></h2>
+                      <p id="skill-inspector-context" class="mt-1 text-sm text-[#4D3B42] dark:text-[#D5C2C9]"></p>
+                    </div>
+
+                    <div class="p-6 space-y-6">
+                      <div>
+                        <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-2">Applied Architecture Pattern</h3>
+                        <p id="skill-inspector-pattern" class="text-sm text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed"></p>
+                      </div>
+
+                      <div>
+                        <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-2">Live Code Pattern</h3>
+                        <pre class="p-4 rounded-xl bg-[#191A28] dark:bg-[#0F1018] border border-[#2E344D] text-[#EEF2FA] text-xs font-mono-code overflow-x-auto leading-relaxed min-h-[96px]"><code id="skill-inspector-code"></code><span aria-hidden="true" class="animate-blink-cursor inline-block w-1.5 h-3.5 ml-0.5 align-middle bg-[#7ED3C6]"></span></pre>
+                      </div>
+
+                      <div class="pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-3">Applied in Portfolio Projects</h3>
+                        <div id="skill-inspector-projects" class="space-y-2"></div>
+                      </div>
+                    </div>
+                  </aside>
+
+                  <div class="mt-4 flex justify-end">
+                    <button type="button" data-nav-page="projects" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] hover:underline">
+                      Open full Bento Project Gallery →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== PAGE 3: PROJECTS ==================== -->
+          <section id="page-projects" data-page="projects" aria-labelledby="projects-heading" class="hidden py-12 md:py-16">
+            <div class="portfolio-container">
+              <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 mb-10 border-b border-[#EAD6DC] dark:border-[#33262D]">
+                <div class="space-y-2 max-w-xl">
+                  <p id="projects-count-label" class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">Interactive Bento Showcase · 8 Projects</p>
+                  <h1 id="projects-heading" class="font-display headline-balance text-3xl md:text-4xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">
+                    Featured Projects &amp;<br />Case Study Bento
+                  </h1>
+                  <p class="text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed pt-1">
+                    Explore live Netlify deployments, browser games, responsive UI layouts, and creative showcases. Click any card to inspect its case study drawer.
+                  </p>
+                </div>
+
+                <div role="group" aria-label="Filter projects by category" class="inline-flex flex-wrap items-center gap-1 p-1 bg-[#FAF0F2] dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-xl self-start lg:self-auto">
+                  <button type="button" data-project-cat="All" aria-pressed="true">All</button>
+                  <button type="button" data-project-cat="Interactive" aria-pressed="false">Interactive</button>
+                  <button type="button" data-project-cat="Web UI" aria-pressed="false">Web UI</button>
+                  <button type="button" data-project-cat="Showcase" aria-pressed="false">Showcase</button>
+                </div>
+              </div>
+
+              <section id="projects-metrics-chart" aria-labelledby="project-metrics-heading" class="mb-10 bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] rounded-2xl p-6 md:p-7"></section>
+
+              <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-7"></div>
+            </div>
+          </section>
+
+          <!-- ==================== PAGE 4: CAPSTONE ==================== -->
+          <section id="page-capstone" data-page="capstone" aria-labelledby="capstone-heading" class="hidden py-12 md:py-16">
+            <div class="portfolio-container">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-10 mb-10 border-b border-[#EAD6DC] dark:border-[#33262D]">
+                <div class="lg:col-span-6 space-y-2">
+                  <p class="text-xs font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">BSIT Capstone &amp; CIT 240 Documentation</p>
+                  <h1 id="capstone-heading" class="font-display headline-balance text-3xl md:text-4xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">
+                    FaithPoint Capstone &amp;<br />Technical Papers
+                  </h1>
+                </div>
+                <div class="lg:col-span-6 flex items-end">
+                  <p class="text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed max-w-[65ch]">
+                    Serving as Lead Documentation &amp; Technical Papers Author for our FaithPoint parish analytics capstone—responsible for every manuscript chapter, system specification, and technical document alongside CIT 240 coursework.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Featured FaithPoint Banner -->
+              <article class="mb-10 bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] rounded-2xl p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  <div class="lg:col-span-7 space-y-4">
+                    <div class="flex flex-wrap items-center gap-3 text-xs">
+                      <span class="font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">BSIT Capstone Project · West Visayas State University - Lambunao Campus</span>
+                      <span aria-hidden="true">·</span>
+                      <span class="font-semibold text-[#3D4E81] dark:text-[#8FA4E8]">Lead Documentation &amp; Technical Papers Author</span>
+                    </div>
+                    <h2 class="font-display headline-balance text-2xl md:text-[1.75rem] font-bold tracking-tight leading-snug text-[#1F171A] dark:text-[#F8EFF2]">
+                      FaithPoint: Development of Parish Data Analytics-Based System for Collection, Sacramental, and Mausoleum Records
+                    </h2>
+                    <p class="text-sm md:text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed">
+                      In charge of authoring, structuring, and finalizing all capstone research papers and official system documentation—covering preliminaries, manuscript chapters, related literature, methodology, entity-relationship specifications, analytics reporting definitions, and complete appendices.
+                    </p>
+                    <p class="text-xs font-mono-code text-[#3D4E81] dark:text-[#8FA4E8] pt-1">
+                      Preliminaries &amp; Chapters 1–5 Manuscript · System Architecture, ERD &amp; Data Dictionary · Appendices, Instruments &amp; Defense Papers
+                    </p>
+                  </div>
+
+                  <div class="lg:col-span-5 grid grid-cols-1 gap-3">
+                    <div class="rounded-xl border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FAF0F2]/75 dark:bg-[#2A1D24]/60 p-4">
+                      <h3 class="font-display text-sm font-bold text-[#BE4B72] dark:text-[#F2A7C0] mb-1">Collection Analytics</h3>
+                      <p class="text-xs text-[#4D3B42] dark:text-[#D5C2C9]">Documentation and reporting schemas for parish offerings, tithes, fund tracking, and financial analytics trends.</p>
+                    </div>
+                    <div class="rounded-xl border border-[#C7D3EA] dark:border-[#333D5C] bg-[#EEF2FA]/75 dark:bg-[#1E2438]/60 p-4">
+                      <h3 class="font-display text-sm font-bold text-[#3D4E81] dark:text-[#8FA4E8] mb-1">Sacramental Records</h3>
+                      <p class="text-xs text-[#4D3B42] dark:text-[#D5C2C9]">Workflows, archival record schemas, and certificate issuance specifications for baptism, confirmation, and marriage registries.</p>
+                    </div>
+                    <div class="rounded-xl border border-[#B8DCD5] dark:border-[#2A4945] bg-[#EAF6F3]/75 dark:bg-[#192D2A]/60 p-4">
+                      <h3 class="font-display text-sm font-bold text-[#2F7A70] dark:text-[#7ED3C6] mb-1">Mausoleum Records</h3>
+                      <p class="text-xs text-[#4D3B42] dark:text-[#D5C2C9]">Lot and niche registry specifications, interment history logs, and occupancy analytics documentation.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Deliverables -->
+              <div class="space-y-5">
+                <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl overflow-hidden">
+                  <div class="p-6 md:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-5 space-y-1.5">
+                      <p class="font-editorial text-xs font-medium text-[#BE4B72] dark:text-[#F2A7C0]">Deliverable 01</p>
+                      <h2 class="font-display text-lg md:text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">FaithPoint Capstone Manuscript &amp; Research Papers (Chapters 1–5)</h2>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">BSIT Capstone · Lead Author · In Charge of All Papers &amp; Documentation</p>
+                    </div>
+                    <div class="lg:col-span-4 space-y-2.5">
+                      <p class="text-sm text-[#4D3B42] dark:text-[#D5C2C9]">Authored and consolidated the complete academic capstone manuscript for FaithPoint across Collection, Sacramental, and Mausoleum records.</p>
+                      <p class="text-xs font-mono-code text-[#3D4E81] dark:text-[#8FA4E8]">Chapters 1–3 Proposal · Literature &amp; Systems Review · Chapters 4–5 Final Paper</p>
+                    </div>
+                    <div class="lg:col-span-3 flex flex-wrap lg:flex-col lg:items-end gap-2.5">
+                      <button type="button" data-checklist-toggle="checklist-1" aria-expanded="true" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] dark:border-[#3D2C35] rounded-xl">
+                        <span data-checklist-label>Hide Checklist</span>
+                        <span data-checklist-chevron class="rotate-180 transition-transform">▾</span>
+                      </button>
+                      <a href="https://github.com/lailaenarne" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0] hover:underline">View Repository ↗</a>
+                    </div>
+                  </div>
+                  <div id="checklist-1" class="px-6 pb-6 md:px-7 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228] bg-[#FDF7F8] dark:bg-[#140F12]/60">
+                    <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-3">Verified Engineering &amp; Documentation Milestones</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-[#4D3B42] dark:text-[#D5C2C9]">
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Written problem statements, significance, and scope for Collection, Sacramental, and Mausoleum analytics</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Compiled Review of Related Literature (RRL) and comparative parish management system matrices</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Formatted final evaluation results, statistical tables, and panel revision matrices</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl overflow-hidden">
+                  <div class="p-6 md:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-5 space-y-1.5">
+                      <p class="font-editorial text-xs font-medium text-[#3D4E81] dark:text-[#8FA4E8]">Deliverable 02</p>
+                      <h2 class="font-display text-lg md:text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">FaithPoint Preliminaries, Appendices &amp; System Documentation</h2>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Academic &amp; Technical Papers · Parish Records · Lead Documentation Author</p>
+                    </div>
+                    <div class="lg:col-span-4 space-y-2.5">
+                      <p class="text-sm text-[#4D3B42] dark:text-[#D5C2C9]">Prepared the full preliminaries, appendices, database schemas, and supporting research documentation into a publication-ready manuscript.</p>
+                      <p class="text-xs font-mono-code text-[#3D4E81] dark:text-[#8FA4E8]">Preliminaries &amp; Front Matter · ERD &amp; Data Dictionary · Appendices &amp; Research Forms</p>
+                    </div>
+                    <div class="lg:col-span-3 flex flex-wrap lg:flex-col lg:items-end gap-2.5">
+                      <button type="button" data-checklist-toggle="checklist-2" aria-expanded="false" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] dark:border-[#3D2C35] rounded-xl">
+                        <span data-checklist-label>Verification Checklist</span>
+                        <span data-checklist-chevron class="transition-transform">▾</span>
+                      </button>
+                      <a href="https://github.com/lailaenarne" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] hover:underline">View Repository ↗</a>
+                    </div>
+                  </div>
+                  <div id="checklist-2" class="hidden px-6 pb-6 md:px-7 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228] bg-[#FDF7F8] dark:bg-[#140F12]/60">
+                    <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-3">Verified Engineering &amp; Documentation Milestones</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-[#4D3B42] dark:text-[#D5C2C9]">
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Compiled title page, approval sheets, acknowledgments, abstract, and table of contents preliminaries</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Documented normalized schemas, process flowcharts, and data dictionaries for parish records</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Organized appendices including evaluation instruments, parish letters, and researcher credentials</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl overflow-hidden">
+                  <div class="p-6 md:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-5 space-y-1.5">
+                      <p class="font-editorial text-xs font-medium text-[#2F7A70] dark:text-[#7ED3C6]">Deliverable 03</p>
+                      <h2 class="font-display text-lg md:text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">CIT 240 Web Architecture &amp; Portfolio Documentation</h2>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Coursework Deliverable · Live on Netlify · Front-End Engineer &amp; Documenter</p>
+                    </div>
+                    <div class="lg:col-span-4 space-y-2.5">
+                      <p class="text-sm text-[#4D3B42] dark:text-[#D5C2C9]">Engineered and documented a responsive multi-page portfolio featuring 8 deployed Netlify apps, semantic HTML5 landmarks, and interactive stack analytics.</p>
+                      <p class="text-xs font-mono-code text-[#3D4E81] dark:text-[#8FA4E8]">Semantic Landmark Audit · README &amp; Setup Guide · 8 Live Netlify Builds</p>
+                    </div>
+                    <div class="lg:col-span-3 flex flex-wrap lg:flex-col lg:items-end gap-2.5">
+                      <button type="button" data-checklist-toggle="checklist-3" aria-expanded="false" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] dark:border-[#3D2C35] rounded-xl">
+                        <span data-checklist-label>Verification Checklist</span>
+                        <span data-checklist-chevron class="transition-transform">▾</span>
+                      </button>
+                      <a href="https://portfolio-passi.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#2F7A70] dark:text-[#7ED3C6] hover:underline">View Live Site ↗</a>
+                    </div>
+                  </div>
+                  <div id="checklist-3" class="hidden px-6 pb-6 md:px-7 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228] bg-[#FDF7F8] dark:bg-[#140F12]/60">
+                    <h3 class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7] mb-3">Verified Engineering &amp; Documentation Milestones</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-[#4D3B42] dark:text-[#D5C2C9]">
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Verified &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt; hierarchy across breakpoints</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Documented repository layout and static deployment workflows cleanly</li>
+                      <li class="p-3.5 rounded-xl bg-white dark:bg-[#1D161A] border border-[#EAD6DC] dark:border-[#33262D]">✓ Verified accessible contrast across Pink Pastel and Dark Plum modes</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="mt-10 bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="space-y-1.5 max-w-2xl">
+                  <h2 class="font-display text-lg font-bold text-[#1F171A] dark:text-[#F8EFF2]">Capstone Paperwork &amp; Technical Documentation Standards</h2>
+                  <p class="text-sm text-[#4D3B42] dark:text-[#D5C2C9]">From the complete FaithPoint manuscript and data dictionary to CIT 240 repository READMEs, every document is versioned and structured for clear academic and engineering handoff.</p>
+                </div>
+                <button type="button" data-nav-page="contact" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#BE4B72] via-[#984A7F] to-[#3D4E81] rounded-xl whitespace-nowrap shrink-0 self-start md:self-auto">
+                  Discuss Capstone Work →
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== PAGE 5: RESUME ==================== -->
+          <section id="page-resume" data-page="resume" aria-labelledby="resume-heading" class="hidden py-12 md:py-16">
+            <div class="portfolio-container">
+              <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 mb-10 border-b border-[#EAD6DC] dark:border-[#33262D]">
+                <div class="space-y-2 max-w-2xl">
+                  <p class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">Curriculum Vitae · Software Technology</p>
+                  <h1 id="resume-heading" class="font-display headline-balance text-3xl md:text-4xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">
+                    Curriculum Vitae &amp;<br />Academic Resume
+                  </h1>
+                  <p class="text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed pt-1">
+                    Inspect my complete BSIT academic track, immersion experience, student council leadership, seminars, and faculty references—or download the official PDF copy.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 self-start lg:self-auto">
+                  <div role="group" aria-label="Resume view mode" class="inline-flex items-center p-1 bg-[#FAF0F2] dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-xl">
+                    <button type="button" data-resume-view="structured" aria-pressed="true" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2E2228] border border-[#E5C6D0] dark:border-[#4E3944] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm">
+                      Interactive View
+                    </button>
+                    <button type="button" data-resume-view="pdf" aria-pressed="false" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7]">
+                      Original PDF
+                    </button>
+                  </div>
+
+                  <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" download="Laila_Mariel_Enarne_CV.pdf" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-gradient-to-r from-[#BE4B72] via-[#984A7F] to-[#3D4E81] rounded-xl shadow-sm whitespace-nowrap shrink-0">
+                    Download CV (PDF)
+                  </a>
+
+                  <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] bg-white dark:bg-[#1D161A] border border-[#C7D3EA] dark:border-[#333D5C] rounded-xl whitespace-nowrap shrink-0">
+                    Open PDF ↗
+                  </a>
+                </div>
+              </div>
+
+              <!-- Structured Interactive Resume -->
+              <div id="resume-structured-view" class="space-y-8">
+                <div data-tilt="3.5" class="tilt-card bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 md:p-8">
+                  <div class="tilt-sheen" aria-hidden="true"></div>
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-3 flex items-center gap-4 lg:flex-col lg:items-start">
+                      <div class="w-24 h-24 md:w-28 md:h-28 rounded-2xl overflow-hidden border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FAF0F2] shrink-0">
+                        <img src="/assets/aistudio/Port_560225e1.png" alt="Laila Mariel R. Enarne studio portrait" class="w-full h-full object-cover object-top" />
+                      </div>
+                      <div class="space-y-1">
+                        <h2 class="font-display text-xl font-bold text-[#1F171A] dark:text-[#F8EFF2]">Laila Mariel R. Enarne</h2>
+                        <p class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8]">BS Information Technology · Major in Software Technology</p>
+                      </div>
+                    </div>
+
+                    <div class="lg:col-span-9 space-y-4">
+                      <div>
+                        <p class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0] mb-1.5">About Me</p>
+                        <p class="text-sm leading-relaxed text-[#4D3B42] dark:text-[#D5C2C9]">
+                          A motivated and goal-oriented Bachelor of Science in Information Technology student majoring in Software Technology, with a solid academic foundation and a passion for continuous learning and technological innovation. I possess basic knowledge in programming, web development, system analysis, and networking, strengthening my skills in software documentation, system design, and academic research.
+                        </p>
+                      </div>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 pt-2 border-t border-[#F4E6EA] dark:border-[#2D2228] text-xs text-[#4D3B42] dark:text-[#D5C2C9]">
+                        <span>Barangay Tampucao, Lambunao, Iloilo</span>
+                        <a href="tel:09565648605" class="font-mono-code tabular-nums hover:text-[#BE4B72]">09565648605</a>
+                        <a href="mailto:lailamariel.enarne@wvsu.edu.ph" class="truncate hover:text-[#BE4B72]">lailamariel.enarne@wvsu.edu.ph</a>
+                        <span>English · Filipino · Hiligaynon</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  <div class="lg:col-span-5 space-y-6">
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Core Strengths &amp; Soft Skills</h2>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2.5 text-xs font-medium text-[#1F171A] dark:text-[#F8EFF2]">
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Problem Solving</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Time Management</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Leadership</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Adaptability and Accessibility</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Attention to Detail</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Teamwork and Collaboration</div>
+                        <div class="px-3.5 py-2.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">Willingness to Learn</div>
+                      </div>
+                    </article>
+
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Honors &amp; Affiliations</h2>
+                      <ul class="space-y-3 text-xs">
+                        <li class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">Treasurer, SICT-Student Council (Present)</p>
+                          <p class="text-[#665058] dark:text-[#B59EA7]">West Visayas State University – Lambunao Campus</p>
+                        </li>
+                        <li class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">Volunteer, SICT-Student Council (2025–2026)</p>
+                          <p class="text-[#665058] dark:text-[#B59EA7]">West Visayas State University – Lambunao Campus</p>
+                        </li>
+                        <li class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">With Honor (2023)</p>
+                          <p class="text-[#665058] dark:text-[#B59EA7]">Lambunao National High School – Senior High School</p>
+                        </li>
+                        <li class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">With High Honor (2021)</p>
+                          <p class="text-[#665058] dark:text-[#B59EA7]">Lambunao National High School – Junior High School</p>
+                        </li>
+                        <li class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-semibold text-[#1F171A] dark:text-[#F8EFF2]">SSG President &amp; Consistent Honor Student (2011–2017)</p>
+                          <p class="text-[#665058] dark:text-[#B59EA7]">Tampucao Elementary School</p>
+                        </li>
+                      </ul>
+                    </article>
+
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Character References</h2>
+                      <div class="space-y-3 text-xs">
+                        <div class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Isauro S. Sindol Jr.</p>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">Director, School of Information and Communications Technology</p>
+                          <a href="tel:09064120265" class="font-mono-code text-[#2F7A70] dark:text-[#7ED3C6] hover:underline">09064120265</a>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Lovelyn F. Castro</p>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">Instructor / SICT, WVSU – Lambunao Campus</p>
+                          <a href="tel:09106696539" class="font-mono-code text-[#2F7A70] dark:text-[#7ED3C6] hover:underline">09106696539</a>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+                          <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Fritz John B. Luis</p>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">Instructor / SICT, WVSU – Lambunao Campus</p>
+                          <a href="tel:09482589062" class="font-mono-code text-[#2F7A70] dark:text-[#7ED3C6] hover:underline">09482589062</a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <div class="lg:col-span-7 space-y-6">
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Work Experience</h2>
+                      <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] space-y-2">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                          <h3 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Senior High School Student Immersionist</h3>
+                          <span class="px-2.5 py-1 text-[11px] font-mono-code font-semibold rounded-lg bg-[#EEF2FA] dark:bg-[#1E2438] text-[#3D4E81] dark:text-[#8FA4E8]">2023</span>
+                        </div>
+                        <p class="text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]">Lambunao Tourism Office</p>
+                        <p class="text-sm text-[#4D3B42] dark:text-[#D5C2C9]">Supported daily office operations by sorting and filing of essential documents. Handled document routing to ensure papers reached the correct personnel and offices.</p>
+                      </div>
+                    </article>
+
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Education</h2>
+                      <div class="space-y-3">
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div>
+                            <h3 class="font-display text-sm md:text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Bachelor of Science in Information Technology</h3>
+                            <p class="text-xs text-[#665058] dark:text-[#B59EA7]">West Visayas State University – Lambunao Campus</p>
+                          </div>
+                          <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2.5 py-1 text-[11px] font-semibold rounded-lg border bg-[#FAF0F2] border-[#E5C6D0] text-[#BE4B72]">Tertiary</span>
+                            <span class="text-xs font-mono-code">2023 – Present</span>
+                          </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div>
+                            <h3 class="font-display text-sm md:text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Humanities and Social Science Strand – Academic Track</h3>
+                            <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Lambunao National High School – Senior High School</p>
+                          </div>
+                          <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2.5 py-1 text-[11px] font-semibold rounded-lg border bg-[#EEF2FA] border-[#C7D3EA] text-[#3D4E81]">Secondary</span>
+                            <span class="text-xs font-mono-code">2021 – 2023</span>
+                          </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div>
+                            <h3 class="font-display text-sm md:text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Major in Information and Communications Technology</h3>
+                            <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Lambunao National High School – Junior High School</p>
+                          </div>
+                          <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2.5 py-1 text-[11px] font-semibold rounded-lg border bg-[#EEF2FA] border-[#C7D3EA] text-[#3D4E81]">Secondary</span>
+                            <span class="text-xs font-mono-code">2017 – 2021</span>
+                          </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div>
+                            <h3 class="font-display text-sm md:text-base font-bold text-[#1F171A] dark:text-[#F8EFF2]">Primary Education</h3>
+                            <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Tampucao Elementary School</p>
+                          </div>
+                          <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2.5 py-1 text-[11px] font-semibold rounded-lg border bg-[#EAF6F3] border-[#B8DCD5] text-[#2F7A70]">Primary</span>
+                            <span class="text-xs font-mono-code">2011 – 2017</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 space-y-4">
+                      <h2 class="font-display text-base font-bold text-[#1F171A] dark:text-[#F8EFF2] pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">Seminars &amp; Trainings</h2>
+                      <div class="space-y-3 text-xs">
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] space-y-1">
+                          <div class="flex justify-between gap-2"><span class="font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">SICT / WVSU Lambunao</span><span class="font-mono-code">2026</span></div>
+                          <h3 class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">AI and Emerging Technologies</h3>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">A seminar focused on understanding AI and emerging technologies and their role in driving future digital innovation.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] space-y-1">
+                          <div class="flex justify-between gap-2"><span class="font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">SICT / WVSU Lambunao</span><span class="font-mono-code">2026</span></div>
+                          <h3 class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Cloud Computing and Data Technologies</h3>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">A seminar focused on understanding cloud computing and data technologies and their application in modern digital infrastructure.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] space-y-1">
+                          <div class="flex justify-between gap-2"><span class="font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">DICT, Passi City</span><span class="font-mono-code">2026</span></div>
+                          <h3 class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Digital Productivity Essentials and Applied AI for Automation and Decision Support</h3>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">A hands-on training focused on mastering digital productivity tools and AI applications to streamline processes and strengthen decision support.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] space-y-1">
+                          <div class="flex justify-between gap-2"><span class="font-semibold text-[#2F7A70] dark:text-[#7ED3C6]">Interface Computer College</span><span class="font-mono-code">2018</span></div>
+                          <h3 class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Computer Literacy Training</h3>
+                          <p class="text-[#4D3B42] dark:text-[#D5C2C9]">A training session focused on mastering essential computer skills, digital tools, and office applications to enhance daily productivity.</p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Embedded PDF Viewer -->
+              <div id="resume-pdf-view" class="hidden bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-4 md:p-6 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#F4E6EA] dark:border-[#2D2228]">
+                  <div>
+                    <p class="font-display text-sm font-bold text-[#1F171A] dark:text-[#F8EFF2]">Laila_Mariel_Enarne_CV.pdf</p>
+                    <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Official 1-Page Curriculum Vitae · Embedded PDF Viewer</p>
+                  </div>
+                  <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" download="Laila_Mariel_Enarne_CV.pdf" class="px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#EAD6DC] bg-[#FAF0F2] dark:bg-[#2A1D24] text-[#BE4B72] dark:text-[#F2A7C0]">Save Copy</a>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2] dark:bg-[#140F12]">
+                  <iframe src="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf#view=FitH" title="Laila Mariel R. Enarne Curriculum Vitae PDF" class="w-full h-[760px]"></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== PAGE 6: CONTACT ==================== -->
+          <section id="page-contact" data-page="contact" aria-labelledby="contact-heading" class="hidden py-12 md:py-16">
+            <div class="portfolio-container">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                  <div class="space-y-3">
+                    <p class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8]">Correspondence</p>
+                    <h1 id="contact-heading" class="font-display headline-balance text-3xl md:text-4xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]">
+                      Get in Touch &amp;<br />Collaborate
+                    </h1>
+                    <p class="text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed max-w-[45ch]">
+                      Open to 2027 software engineering internships, CIT 240 technical reviews, and open-source web accessibility collaborations.
+                    </p>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] space-y-2">
+                      <p class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7]">University Email</p>
+                      <a href="mailto:lailamariel.enarne@wvsu.edu.ph" class="block text-sm font-semibold text-[#1F171A] dark:text-[#F8EFF2] hover:text-[#BE4B72] break-all">lailamariel.enarne@wvsu.edu.ph</a>
+                      <button id="copy-email-btn" type="button" class="px-3 py-1.5 text-xs font-medium bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] dark:border-[#3D2C35] rounded-lg">Copy Address</button>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] space-y-2">
+                      <p class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7]">Mobile Number</p>
+                      <a href="tel:09565648605" class="block font-mono-code tabular-nums text-sm font-semibold text-[#1F171A] dark:text-[#F8EFF2] hover:text-[#7A4988]">09565648605</a>
+                      <button id="copy-phone-btn" type="button" class="px-3 py-1.5 text-xs font-medium bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] dark:border-[#3D2C35] rounded-lg">Copy Number</button>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] space-y-1">
+                      <p class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7]">Address &amp; Institution</p>
+                      <p class="text-sm font-medium text-[#1F171A] dark:text-[#F8EFF2]">Barangay Tampucao, Lambunao, Iloilo</p>
+                      <p class="text-xs text-[#665058] dark:text-[#B59EA7]">West Visayas State University - Lambunao Campus</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] space-y-2">
+                      <p class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7]">Social &amp; Developer Profiles</p>
+                      <div class="flex flex-wrap gap-4 text-sm font-semibold">
+                        <a href="https://github.com/lailaenarne" target="_blank" rel="noopener noreferrer" class="hover:text-[#3D4E81]">GitHub ↗</a>
+                        <a href="https://web.facebook.com/khate.lyn.5245" target="_blank" rel="noopener noreferrer" class="hover:text-[#2F7A70]">Facebook ↗</a>
+                      </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] space-y-2">
+                      <p class="text-xs font-semibold text-[#665058] dark:text-[#B59EA7]">Curriculum Vitae (PDF)</p>
+                      <p class="text-sm font-medium text-[#1F171A] dark:text-[#F8EFF2]">Laila_Mariel_Enarne_CV.pdf</p>
+                      <div class="flex flex-wrap items-center gap-3">
+                        <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" download="Laila_Mariel_Enarne_CV.pdf" class="px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#BE4B72] to-[#3D4E81] rounded-lg">Download Resume</a>
+                        <a href="/assets/aistudio/CV_LMEnarne_d72ba67f.pdf" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-[#3D4E81] dark:text-[#8FA4E8] hover:underline">Preview PDF ↗</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                  <div class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-6 md:p-8">
+                    <div id="contact-receipt" role="status" aria-live="polite" class="hidden py-8 space-y-4">
+                      <p class="text-[#2F7A70] dark:text-[#7ED3C6] font-semibold text-sm">✓ Message Prepared Successfully</p>
+                      <p id="contact-receipt-summary" class="text-sm text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed"></p>
+                      <button id="contact-receipt-reset" type="button" class="px-4 py-2.5 text-xs font-semibold bg-[#FAF0F2] dark:bg-[#2A1D24] border border-[#EAD6DC] rounded-xl">Send Another Message</button>
+                    </div>
+
+                    <form id="contact-form" novalidate class="space-y-6">
+                      <div class="pb-4 border-b border-[#F4E6EA] dark:border-[#2D2228]">
+                        <span class="font-display text-sm font-semibold text-[#1F171A] dark:text-[#F8EFF2]">Direct Message Form</span>
+                      </div>
+
+                      <input id="contact-topic-input" type="hidden" name="topic" value="Internship or Junior Role" />
+                      <div>
+                        <span class="block text-xs font-semibold text-[#4D3B42] dark:text-[#E7D4DB] mb-2.5">Inquiry Topic</span>
+                        <div role="group" aria-label="Select inquiry topic" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          <button type="button" data-contact-topic="Internship or Junior Role" aria-pressed="true" class="px-3.5 py-2.5 text-left text-xs font-medium rounded-xl border bg-[#EEF2FA] dark:bg-[#1E2438] border-[#3D4E81] dark:border-[#8FA4E8] text-[#3D4E81] dark:text-[#8FA4E8]">Internship or Junior Role</button>
+                          <button type="button" data-contact-topic="CIT 240 Coursework Review" aria-pressed="false" class="px-3.5 py-2.5 text-left text-xs font-medium rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] text-[#4D3B42] dark:text-[#D5C2C9]">CIT 240 Coursework Review</button>
+                          <button type="button" data-contact-topic="Open Source Collaboration" aria-pressed="false" class="px-3.5 py-2.5 text-left text-xs font-medium rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] text-[#4D3B42] dark:text-[#D5C2C9]">Open Source Collaboration</button>
+                          <button type="button" data-contact-topic="General Inquiry" aria-pressed="false" class="px-3.5 py-2.5 text-left text-xs font-medium rounded-xl border bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] text-[#4D3B42] dark:text-[#D5C2C9]">General Inquiry</button>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label for="contact-name" class="block text-xs font-semibold text-[#4D3B42] dark:text-[#E7D4DB] mb-2">Full Name</label>
+                          <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="e.g. Marco Reyes" class="w-full px-3.5 py-2.5 text-sm bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] rounded-xl" />
+                          <p id="contact-name-error" class="hidden mt-1.5 text-xs text-red-700 dark:text-red-400">Please enter your full name (at least 2 characters).</p>
+                        </div>
+                        <div>
+                          <label for="contact-email" class="block text-xs font-semibold text-[#4D3B42] dark:text-[#E7D4DB] mb-2">Email Address</label>
+                          <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@organization.org" class="w-full px-3.5 py-2.5 text-sm bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] rounded-xl" />
+                          <p id="contact-email-error" class="hidden mt-1.5 text-xs text-red-700 dark:text-red-400">Please enter a valid email address.</p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="flex items-center justify-between mb-2">
+                          <label for="contact-message" class="block text-xs font-semibold text-[#4D3B42] dark:text-[#E7D4DB]">Message</label>
+                          <span id="contact-msg-count" class="text-[11px] font-mono-code tabular-nums text-[#665058] dark:text-[#B59EA7]">0 chars</span>
+                        </div>
+                        <textarea id="contact-message" name="message" rows="5" placeholder="Share details about your team, project scope, or timeline..." class="w-full px-3.5 py-2.5 text-sm bg-[#FDF7F8] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D] rounded-xl resize-y"></textarea>
+                        <p id="contact-message-error" class="hidden mt-1.5 text-xs text-red-700 dark:text-red-400">Please include a brief project or inquiry note (at least 15 characters).</p>
+                      </div>
+
+                      <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-[#F4E6EA] dark:border-[#2D2228]">
+                        <p class="text-xs text-[#665058] dark:text-[#B59EA7]">Direct replies sent within 24–48 hours.</p>
+                        <button type="submit" class="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#BE4B72] via-[#984A7F] to-[#3D4E81] rounded-xl">Send Message</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Site Footer -->
+        <footer class="border-t border-[#E5C6D0] dark:border-[#33262D] bg-white/90 dark:bg-[#140F12]/90 backdrop-blur-sm py-10 transition-colors duration-200">
+          <div class="portfolio-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+              <span class="relative inline-flex items-center justify-center w-14 h-10 rounded-xl bg-gradient-to-br from-[#BE4B72] via-[#7A4988] to-[#3D4E81] p-[1.5px] shadow-sm shrink-0">
+                <span class="w-full h-full rounded-[10.5px] bg-[#090708] overflow-hidden flex items-center justify-center p-0.5">
+                  <img src="/assets/aistudio/Laila_Mariel_Enarne_Tech_Monogram_04535ec8.png" alt="Laila Mariel Enarne LME logo" class="w-full h-full object-contain" />
+                </span>
+              </span>
+              <div class="space-y-0.5">
+                <p class="font-display text-sm font-semibold text-[#1F171A] dark:text-[#F8EFF2]">Laila Mariel Enarne</p>
+                <p class="text-xs text-[#665058] dark:text-[#B59EA7]">© 2026 Laila Mariel Enarne. Built with plain HTML5, CSS, and vanilla JavaScript.</p>
+              </div>
+            </div>
+
+            <nav aria-label="Footer navigation" class="flex flex-wrap items-center gap-6 text-xs font-medium">
+              <a href="#about" data-nav-page="about" data-nav-style="footer">About</a>
+              <a href="#skills" data-nav-page="skills" data-nav-style="footer">Skills</a>
+              <a href="#projects" data-nav-page="projects" data-nav-style="footer">Projects</a>
+              <a href="#capstone" data-nav-page="capstone" data-nav-style="footer">Capstone</a>
+              <a href="#resume" data-nav-page="resume" data-nav-style="footer">Resume</a>
+              <a href="#contact" data-nav-page="contact" data-nav-style="footer">Contact</a>
+            </nav>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Slide-Over Case Study Drawer -->
+    <div id="case-study-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-project-title" class="hidden fixed inset-0 z-50 flex justify-end">
+      <div id="drawer-backdrop" class="fixed inset-0 bg-[#140F12]/70 backdrop-blur-sm"></div>
+      <div class="relative z-10 w-full max-w-2xl h-full bg-white dark:bg-[#1A1317] border-l border-[#E5C6D0] dark:border-[#3D2C35] shadow-2xl flex flex-col overflow-hidden">
+        <div class="flex items-center justify-between gap-4 px-6 py-4 border-b border-[#EAD6DC] dark:border-[#33262D] bg-[#FDF7F8] dark:bg-[#140F12]">
+          <div class="flex items-center gap-2 text-xs text-[#665058] dark:text-[#B59EA7] min-w-0">
+            <span class="font-semibold text-[#BE4B72] dark:text-[#F2A7C0] whitespace-nowrap">Case Study Drawer</span>
+            <span aria-hidden="true">·</span>
+            <span id="drawer-project-context" class="truncate"></span>
+          </div>
+          <button type="button" data-close-drawer aria-label="Close case study drawer" class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-[#EAD6DC] dark:border-[#3D2C35] text-[#4D3B42] dark:text-[#E7D4DB]">✕</button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-7">
+          <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FAF0F2]">
+            <img id="drawer-project-image" src="" alt="" class="w-full h-full object-cover" />
+          </div>
+
+          <div class="space-y-2.5">
+            <div id="drawer-project-meta" class="flex flex-wrap items-center gap-2 text-xs text-[#665058] dark:text-[#B59EA7]"></div>
+            <h2 id="drawer-project-title" class="font-display text-2xl md:text-3xl font-bold tracking-tight text-[#1F171A] dark:text-[#F8EFF2]"></h2>
+            <p id="drawer-project-summary" class="text-sm md:text-base text-[#4D3B42] dark:text-[#D5C2C9] leading-relaxed"></p>
+          </div>
+
+          <div role="tablist" aria-label="Case study detail sections" class="flex items-center gap-1 p-1 rounded-xl bg-[#FAF0F2] dark:bg-[#140F12] border border-[#EAD6DC] dark:border-[#33262D]">
+            <button role="tab" type="button" data-drawer-tab="architecture" aria-selected="true">Architecture</button>
+            <button role="tab" type="button" data-drawer-tab="ui" aria-selected="false">UI Highlights</button>
+            <button role="tab" type="button" data-drawer-tab="stack" aria-selected="false">Stack &amp; Links</button>
+          </div>
+
+          <div id="drawer-tab-body"></div>
+        </div>
+
+        <div class="px-6 py-4 border-t border-[#EAD6DC] dark:border-[#33262D] bg-[#FDF7F8] dark:bg-[#140F12] flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-3">
+            <a id="drawer-live-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-xs font-semibold text-white bg-[#BE4B72] hover:bg-[#A63D61] rounded-xl">Open Live Demo ↗</a>
+            <a id="drawer-github-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-xl">GitHub Source ↗</a>
+          </div>
+          <button type="button" data-close-drawer class="px-3.5 py-2 text-xs font-medium text-[#665058] dark:text-[#B59EA7]">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
