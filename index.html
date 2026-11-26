@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/aistudio/Laila_Mariel_Enarne_Tech_Monogram_04535ec8.png"
+    />
+    <title>Laila Mariel Enarne — Software &amp; Web Portfolio</title>
+    <meta
+      name="description"
+      content="Personal software engineering and CIT 240 portfolio of Laila Mariel Enarne, showcasing full-stack web systems, open-source accessibility tools, and capstone architecture."
+    />
+    <meta property="og:title" content="Laila Mariel Enarne — Software & Web Portfolio" />
+    <meta
+      property="og:description"
+      content="Full-stack web systems, accessible interfaces, and CIT 240 capstone deliverables built with semantic HTML5, responsive CSS, and modern TypeScript."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#FDF7F8] text-[#1F171A] dark:bg-[#140F12] dark:text-[#F8EFF2] antialiased selection:bg-[#BE4B72] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

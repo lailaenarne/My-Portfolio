@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.headline-balance {
+  text-wrap: balance;
+}
+
+/* Editorial responsive grid & media query refinements */
+.portfolio-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .portfolio-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Layered Architectural Blueprint Grid + Subtle Pastel Dot Matrix */
+.bg-pastel-blueprint {
+  background-image:
+    radial-gradient(rgba(190, 75, 114, 0.16) 1px, transparent 1px),
+    linear-gradient(to right, rgba(214, 152, 173, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(214, 152, 173, 0.11) 1px, transparent 1px);
+  background-size: 24px 24px, 72px 72px, 72px 72px;
+}
+
+.dark .bg-pastel-blueprint {
+  background-image:
+    radial-gradient(rgba(242, 167, 192, 0.14) 1px, transparent 1px),
+    linear-gradient(to right, rgba(242, 167, 192, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 167, 192, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 72px 72px, 72px 72px;
+}
+
+/* Subtle dot-grid accent for Hero band */
+.bg-pastel-grid {
+  background-image: radial-gradient(rgba(190, 75, 114, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.dark .bg-pastel-grid {
+  background-image: radial-gradient(rgba(242, 167, 192, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Smooth focus-visible accessibility ring */
+:focus-visible {
+  outline: 2px solid #be4b72;
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline-color: #f2a7c0;
+}
+
+/* Dual-direction kinetic marquee animations */
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-left 34s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-right 38s linear infinite;
+}
+
+.kinetic-ribbon:hover .animate-marquee-left,
+.kinetic-ribbon:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
