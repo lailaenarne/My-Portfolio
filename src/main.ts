@@ -149,11 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isActive) {
         btn.className =
           mode === 'light'
-            ? 'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#BE4B72] text-white shadow-sm'
-            : 'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#F2A7C0] text-[#140F12] shadow-sm';
+            ? 'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#BE4B72] text-white shadow-sm'
+            : 'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 bg-[#F2A7C0] text-[#140F12] shadow-sm';
       } else {
         btn.className =
-          'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-[#F8EFF2]';
+          'inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-white';
       }
     });
   };
@@ -191,6 +191,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let activePage: PageId = 'about';
+  let bentoObserver: IntersectionObserver | null = null;
+
+  const observeBentoCards = (root: ParentNode | null) => {
+    bentoObserver?.disconnect();
+    bentoObserver = null;
+    if (!root) return;
+
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-bento-card]')).filter(
+      (el) => !el.classList.contains('is-visible')
+    );
+    if (cards.length === 0) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      cards.forEach((card) => card.classList.add('is-visible'));
+      return;
+    }
+
+    bentoObserver = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => {
+            const rectA = a.boundingClientRect;
+            const rectB = b.boundingClientRect;
+            if (Math.abs(rectA.top - rectB.top) > 12) return rectA.top - rectB.top;
+            return rectA.left - rectB.left;
+          });
+
+        if (intersecting.length === 0) return;
+
+        requestAnimationFrame(() => {
+          intersecting.forEach((entry, batchIdx) => {
+            const card = entry.target as HTMLElement;
+            card.style.setProperty('--bento-delay', `${batchIdx * 90}ms`);
+            card.classList.add('is-visible');
+            bentoObserver?.unobserve(card);
+          });
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -36px 0px',
+      }
+    );
+
+    cards.forEach((card) => bentoObserver?.observe(card));
+  };
+
   const showPage = (pageId: PageId, updateHistory = true) => {
     activePage = pageId;
     pages.forEach((sec) => {
@@ -202,6 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sec.classList.add('animate-page-in');
       }
     });
+    if (pageId === 'projects') {
+      requestAnimationFrame(() => {
+        observeBentoCards(document.getElementById('projects-grid'));
+      });
+    }
 
     navLinks.forEach((el) => {
       const target = el.dataset.navPage;
@@ -215,16 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (el.dataset.navStyle === 'desktop') {
         el.className = isCurrent
-          ? 'relative py-2 text-sm whitespace-nowrap shrink-0 text-[#1F171A] dark:text-white font-semibold border-b-2 border-[#BE4B72] dark:border-[#F2A7C0] transition-colors'
-          : 'relative py-2 text-sm font-medium whitespace-nowrap shrink-0 text-[#5E4B52] dark:text-[#C7B2BA] hover:text-[#BE4B72] dark:hover:text-[#F2A7C0] border-b-2 border-transparent transition-colors';
+          ? 'relative py-2 text-sm whitespace-nowrap shrink-0 text-[#1F171A] dark:text-[#F8EFF2] font-semibold border-b-2 border-[#BE4B72] dark:border-[#F2A7C0] transition-colors'
+          : 'relative py-2 text-sm font-medium whitespace-nowrap shrink-0 text-[#665058] dark:text-[#B59EA7] hover:text-[#BE4B72] dark:hover:text-[#F2A7C0] border-b-2 border-transparent transition-colors';
       } else if (el.dataset.navStyle === 'mobile') {
         el.className = isCurrent
-          ? 'px-3.5 py-3 text-base rounded-xl bg-[#F9E6EC] dark:bg-[#2A1D24] text-[#BE4B72] dark:text-[#F2A7C0] font-semibold'
-          : 'px-3.5 py-3 text-base font-medium rounded-xl text-[#4D3B42] dark:text-[#D5C2C9] hover:bg-[#FAF0F2] dark:hover:bg-[#1D161A]';
+          ? 'px-3.5 py-3 text-base rounded-xl bg-[#FAF0F2] dark:bg-[#2A1D24] text-[#BE4B72] dark:text-[#F2A7C0] font-semibold'
+          : 'px-3.5 py-3 text-base font-medium rounded-xl text-[#4D3B42] dark:text-[#D5C2C9] hover:bg-[#FAF0F2] dark:hover:bg-[#23191F]';
       } else if (el.dataset.navStyle === 'footer') {
         el.className = isCurrent
           ? 'text-[#BE4B72] dark:text-[#F2A7C0] font-semibold transition-colors'
-          : 'text-[#665058] dark:text-[#B59EA7] hover:text-[#3D4E81] dark:hover:text-[#8FA4E8] transition-colors';
+          : 'text-[#665058] dark:text-[#B59EA7] hover:text-[#BE4B72] dark:hover:text-[#F2A7C0] transition-colors';
       }
     });
 
@@ -297,8 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const active = btn.getAttribute('data-3d-preset') === selected;
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       btn.className = active
-        ? 'px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-colors whitespace-nowrap shrink-0 bg-[#BE4B72] dark:bg-[#F2A7C0] text-white dark:text-[#140F12] border-transparent'
-        : 'px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-colors whitespace-nowrap shrink-0 bg-white dark:bg-[#140F12] text-[#4D3B42] dark:text-[#D5C2C9] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#3D4E81] dark:hover:border-[#8FA4E8]';
+        ? 'px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-colors whitespace-nowrap shrink-0 bg-[#BE4B72] dark:bg-[#F2A7C0] text-white dark:text-[#140F12] border-transparent shadow-sm'
+        : 'px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-colors whitespace-nowrap shrink-0 bg-[#FAF0F2] dark:bg-[#140F12] text-[#4D3B42] dark:text-[#D5C2C9] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#3D4E81] dark:hover:border-[#8FA4E8]';
     });
   };
 
@@ -364,6 +417,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('ring-2', active);
       btn.classList.toggle('ring-[#BE4B72]', active);
       btn.classList.toggle('dark:ring-[#F2A7C0]', active);
+      btn.classList.toggle('bg-[#FAF0F2]', active);
+      btn.classList.toggle('dark:bg-[#24181F]', active);
+      btn.classList.toggle('bg-[#FDF7F8]', !active);
+      btn.classList.toggle('dark:bg-[#140F12]', !active);
     });
     if (workflowDetailText) {
       workflowDetailText.innerHTML = `<span class="font-semibold ${info.accentClass}">${escapeHtml(info.label)}:</span> ${escapeHtml(info.detail)}`;
@@ -471,9 +528,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let snippetTimer: number | null = null;
 
   const HEADER_BG: Record<SkillCategory['id'], string> = {
-    languages: 'bg-[#FAF0F2] dark:bg-[#2A1D24]',
-    'frameworks-data': 'bg-[#EEF2FA] dark:bg-[#1E2438]',
-    'tools-devops': 'bg-[#EAF6F3] dark:bg-[#192D2A]',
+    languages: 'bg-[#FAF0F2] dark:bg-[#251820]',
+    'frameworks-data': 'bg-[#EEF2FA] dark:bg-[#191F30]',
+    'tools-devops': 'bg-[#EAF6F3] dark:bg-[#152522]',
   };
 
   const updateSkillInspector = () => {
@@ -515,10 +572,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <button
             type="button"
             data-open-project="${escapeHtml(project.id)}"
-            class="w-full text-left px-3.5 py-2.5 rounded-xl border border-[#EAD6DC] dark:border-[#33262D] bg-[#FDF7F8] dark:bg-[#140F12] hover:border-[#3D4E81] dark:hover:border-[#8FA4E8] flex items-center justify-between gap-3 transition-colors group"
+            class="w-full text-left px-3.5 py-2.5 rounded-xl border border-[#EAD6DC] dark:border-[#33262D] bg-[#FDF7F8] dark:bg-[#140F12] hover:border-[#BE4B72] dark:hover:border-[#F2A7C0] flex items-center justify-between gap-3 transition-colors group"
           >
             <div class="min-w-0">
-              <p class="text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] truncate group-hover:text-[#3D4E81] dark:group-hover:text-[#8FA4E8]">${escapeHtml(project.title)}</p>
+              <p class="text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] truncate group-hover:text-[#BE4B72] dark:group-hover:text-[#F2A7C0]">${escapeHtml(project.title)}</p>
               <p class="text-[11px] text-[#665058] dark:text-[#B59EA7]">${escapeHtml(project.category)} · ${escapeHtml(project.year)}</p>
             </div>
             <span class="text-xs text-[#3D4E81] dark:text-[#8FA4E8] shrink-0" aria-hidden="true">→</span>
@@ -541,8 +598,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const active = btn.dataset.skillDomain === activeSkillDomain;
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       btn.className = active
-        ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white dark:bg-[#2E2228] text-[#1F171A] dark:text-[#F8EFF2] border border-[#E5C6D0] dark:border-[#4E3944] shadow-sm whitespace-nowrap shrink-0'
-        : 'px-3 py-1.5 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-[#F8EFF2] whitespace-nowrap shrink-0';
+        ? 'px-3 py-1.5 text-xs font-semibold rounded-lg bg-white dark:bg-[#2A1D24] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm whitespace-nowrap shrink-0'
+        : 'px-3 py-1.5 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-white whitespace-nowrap shrink-0';
     });
 
     if (skillsContainer) {
@@ -609,8 +666,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const active = btn.dataset.projectCat === activeProjectCategory;
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       btn.className = active
-        ? 'px-3.5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2E2228] border border-[#E5C6D0] dark:border-[#4E3944] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm whitespace-nowrap shrink-0'
-        : 'px-3.5 py-2 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-[#F8EFF2] whitespace-nowrap shrink-0';
+        ? 'px-3.5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2A1D24] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm whitespace-nowrap shrink-0'
+        : 'px-3.5 py-2 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-white whitespace-nowrap shrink-0';
     });
 
     if (metricsContainer) {
@@ -619,15 +676,72 @@ document.addEventListener('DOMContentLoaded', () => {
         activeProjectCategory,
         selectedTechFilter
       );
+
+      const chartStage = document.getElementById('metrics-chart-stage');
+      const tooltipEl = document.getElementById('metrics-hover-tooltip');
+      const mttTech = document.getElementById('mtt-tech');
+      const mttRatio = document.getElementById('mtt-ratio');
+      const mttProjects = document.getElementById('mtt-projects');
+
+      const showBarTooltip = (barBtn: HTMLButtonElement) => {
+        if (!chartStage || !tooltipEl || !mttTech || !mttRatio || !mttProjects) {
+          return;
+        }
+        const tech = barBtn.dataset.metricTech || '';
+        const count = barBtn.dataset.metricCount || '0';
+        const total = barBtn.dataset.metricTotal || '0';
+        const pct = barBtn.dataset.metricPct || '0';
+        let titles: string[] = [];
+        try {
+          titles = JSON.parse(barBtn.dataset.metricTitles || '[]');
+        } catch {
+          titles = [];
+        }
+
+        mttTech.textContent = tech;
+        mttRatio.textContent = `${count} / ${total} (${pct}%)`;
+        mttProjects.innerHTML = titles
+          .map((t) => `<li class="truncate">· ${escapeHtml(t)}</li>`)
+          .join('');
+
+        tooltipEl.classList.remove('hidden');
+
+        const stageRect = chartStage.getBoundingClientRect();
+        const btnRect = barBtn.getBoundingClientRect();
+        const tipWidth = tooltipEl.offsetWidth || 260;
+
+        // Place beside the hovered bar; flip left if near right edge
+        const preferredLeft = btnRect.right - stageRect.left + 8;
+        const maxLeft = Math.max(8, stageRect.width - tipWidth - 8);
+        const leftPos =
+          preferredLeft + tipWidth <= stageRect.width - 8
+            ? preferredLeft
+            : Math.max(8, btnRect.left - stageRect.left - tipWidth - 8);
+
+        tooltipEl.style.left = `${Math.min(leftPos, maxLeft)}px`;
+        tooltipEl.style.top = '12px';
+      };
+
+      const hideBarTooltip = () => {
+        tooltipEl?.classList.add('hidden');
+      };
+
       metricsContainer
         .querySelectorAll<HTMLButtonElement>('[data-metric-tech]')
         .forEach((barBtn) => {
+          barBtn.addEventListener('mouseenter', () => showBarTooltip(barBtn));
+          barBtn.addEventListener('focus', () => showBarTooltip(barBtn));
+          barBtn.addEventListener('mouseleave', hideBarTooltip);
+          barBtn.addEventListener('blur', hideBarTooltip);
           barBtn.addEventListener('click', () => {
             const tech = barBtn.dataset.metricTech || null;
             selectedTechFilter = selectedTechFilter === tech ? null : tech;
             renderProjectsView();
           });
         });
+
+      chartStage?.addEventListener('mouseleave', hideBarTooltip);
+
       metricsContainer
         .querySelector<HTMLButtonElement>('[data-clear-tech-filter]')
         ?.addEventListener('click', () => {
@@ -643,6 +757,9 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedTechFilter
       );
       attachTiltListeners(projectsGrid);
+      requestAnimationFrame(() => {
+        observeBentoCards(projectsGrid);
+      });
       projectsGrid
         .querySelectorAll<HTMLButtonElement>('[data-open-project]')
         .forEach((btn) => {
@@ -695,8 +812,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const active = b.dataset.resumeView === mode;
         b.setAttribute('aria-pressed', active ? 'true' : 'false');
         b.className = active
-          ? 'inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2E2228] border border-[#E5C6D0] dark:border-[#4E3944] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm whitespace-nowrap shrink-0'
-          : 'inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-[#F8EFF2] whitespace-nowrap shrink-0';
+          ? 'inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2A1D24] text-[#1F171A] dark:text-[#F8EFF2] shadow-sm whitespace-nowrap shrink-0'
+          : 'inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-lg text-[#665058] dark:text-[#B59EA7] hover:text-[#1F171A] dark:hover:text-white whitespace-nowrap shrink-0';
       });
     });
   });

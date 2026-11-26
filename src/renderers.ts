@@ -44,14 +44,14 @@ const GADGET_PALETTE: Record<
     crownBg: 'bg-gradient-to-b from-[#F2A7C0] via-[#BE4B72] to-[#7D2B48]',
     ledColor: 'bg-[#F2A7C0] shadow-[0_0_6px_#F2A7C0]',
     selectedRing:
-      'ring-2 ring-[#BE4B72] dark:ring-[#F2A7C0] ring-offset-4 ring-offset-white dark:ring-offset-[#1D161A]',
-    shadowTone: 'bg-[#BE4B72]/25 dark:bg-[#F2A7C0]/20',
+      'ring-2 ring-[#BE4B72] dark:ring-[#F2A7C0] ring-offset-4 ring-offset-[#FAF0F2] dark:ring-offset-[#1D161A]',
+    shadowTone: 'bg-[#BE4B72]/20 dark:bg-[#F2A7C0]/25',
     outerShadow:
-      'shadow-[0_18px_32px_-12px_rgba(190,75,114,0.38),inset_0_2px_4px_rgba(255,255,255,0.8)] dark:shadow-[0_18px_34px_-12px_rgba(0,0,0,0.72),inset_0_2px_4px_rgba(242,167,192,0.2)]',
+      'shadow-[0_14px_26px_-10px_rgba(190,75,114,0.28),inset_0_2px_4px_rgba(255,255,255,0.85)] dark:shadow-[0_18px_32px_-12px_rgba(0,0,0,0.65),inset_0_2px_4px_rgba(255,255,255,0.18)]',
     cardIconBox:
-      'bg-[#FAF0F2] dark:bg-[#2A1D24] border-[#EAD6DC] dark:border-[#3D2C35] text-[#BE4B72] dark:text-[#F2A7C0]',
+      'bg-[#FAF0F2] dark:bg-[#2A1D24] border-[#EAD6DC] dark:border-[#4A2E3B] text-[#BE4B72] dark:text-[#F2A7C0]',
     cardSelected:
-      'bg-[#FAF0F2] dark:bg-[#2A1D24] border-[#BE4B72] dark:border-[#F2A7C0] shadow-sm',
+      'bg-[#FDF2F5] dark:bg-[#2C1A24] border-[#BE4B72] dark:border-[#F2A7C0] shadow-[0_0_0_1px_rgba(190,75,114,0.2)]',
     cardTitleAccent: 'text-[#BE4B72] dark:text-[#F2A7C0]',
     iconSvg:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.5"></rect><path d="M9.5 8.5 7.5 10l2 1.5"></path><path d="m14.5 8.5 2 1.5-2 1.5"></path><path d="M2 18.5h20"></path></svg>',
@@ -66,14 +66,14 @@ const GADGET_PALETTE: Record<
     crownBg: 'bg-gradient-to-b from-[#B4C4F4] via-[#3D4E81] to-[#243054]',
     ledColor: 'bg-[#8FA4E8] shadow-[0_0_6px_#8FA4E8]',
     selectedRing:
-      'ring-2 ring-[#3D4E81] dark:ring-[#8FA4E8] ring-offset-4 ring-offset-white dark:ring-offset-[#1D161A]',
-    shadowTone: 'bg-[#3D4E81]/25 dark:bg-[#8FA4E8]/20',
+      'ring-2 ring-[#3D4E81] dark:ring-[#8FA4E8] ring-offset-4 ring-offset-[#EEF2FA] dark:ring-offset-[#1D161A]',
+    shadowTone: 'bg-[#3D4E81]/20 dark:bg-[#8FA4E8]/25',
     outerShadow:
-      'shadow-[0_18px_32px_-12px_rgba(61,78,129,0.36),inset_0_2px_4px_rgba(255,255,255,0.8)] dark:shadow-[0_18px_34px_-12px_rgba(0,0,0,0.72),inset_0_2px_4px_rgba(143,164,232,0.2)]',
+      'shadow-[0_14px_26px_-10px_rgba(61,78,129,0.28),inset_0_2px_4px_rgba(255,255,255,0.85)] dark:shadow-[0_18px_32px_-12px_rgba(0,0,0,0.65),inset_0_2px_4px_rgba(255,255,255,0.18)]',
     cardIconBox:
-      'bg-[#EEF2FA] dark:bg-[#1E2438] border-[#C7D3EA] dark:border-[#333D5C] text-[#3D4E81] dark:text-[#8FA4E8]',
+      'bg-[#EEF2FA] dark:bg-[#1E2438] border-[#C7D3EA] dark:border-[#39456E] text-[#3D4E81] dark:text-[#8FA4E8]',
     cardSelected:
-      'bg-[#EEF2FA] dark:bg-[#1E2438] border-[#3D4E81] dark:border-[#8FA4E8] shadow-sm',
+      'bg-[#F1F4FB] dark:bg-[#1D2338] border-[#3D4E81] dark:border-[#8FA4E8] shadow-[0_0_0_1px_rgba(61,78,129,0.2)]',
     cardTitleAccent: 'text-[#3D4E81] dark:text-[#8FA4E8]',
     iconSvg:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="3"></ellipse><path d="M4.5 6v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3V6"></path><path d="M4.5 12v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6"></path></svg>',
@@ -88,14 +88,14 @@ const GADGET_PALETTE: Record<
     crownBg: 'bg-gradient-to-b from-[#9FE2D7] via-[#2F7A70] to-[#1B4C45]',
     ledColor: 'bg-[#7ED3C6] shadow-[0_0_6px_#7ED3C6]',
     selectedRing:
-      'ring-2 ring-[#2F7A70] dark:ring-[#7ED3C6] ring-offset-4 ring-offset-white dark:ring-offset-[#1D161A]',
-    shadowTone: 'bg-[#2F7A70]/25 dark:bg-[#7ED3C6]/20',
+      'ring-2 ring-[#2F7A70] dark:ring-[#7ED3C6] ring-offset-4 ring-offset-[#EAF6F3] dark:ring-offset-[#1D161A]',
+    shadowTone: 'bg-[#2F7A70]/20 dark:bg-[#7ED3C6]/25',
     outerShadow:
-      'shadow-[0_18px_32px_-12px_rgba(47,122,112,0.36),inset_0_2px_4px_rgba(255,255,255,0.8)] dark:shadow-[0_18px_34px_-12px_rgba(0,0,0,0.72),inset_0_2px_4px_rgba(126,211,198,0.2)]',
+      'shadow-[0_14px_26px_-10px_rgba(47,122,112,0.28),inset_0_2px_4px_rgba(255,255,255,0.85)] dark:shadow-[0_18px_32px_-12px_rgba(0,0,0,0.65),inset_0_2px_4px_rgba(255,255,255,0.18)]',
     cardIconBox:
-      'bg-[#EAF6F3] dark:bg-[#192D2A] border-[#B8DCD5] dark:border-[#2A4945] text-[#2F7A70] dark:text-[#7ED3C6]',
+      'bg-[#EAF6F3] dark:bg-[#172B28] border-[#B8DCD5] dark:border-[#2E524C] text-[#2F7A70] dark:text-[#7ED3C6]',
     cardSelected:
-      'bg-[#EAF6F3] dark:bg-[#192D2A] border-[#2F7A70] dark:border-[#7ED3C6] shadow-sm',
+      'bg-[#EEF8F6] dark:bg-[#162B27] border-[#2F7A70] dark:border-[#7ED3C6] shadow-[0_0_0_1px_rgba(47,122,112,0.2)]',
     cardTitleAccent: 'text-[#2F7A70] dark:text-[#7ED3C6]',
     iconSvg:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .8-7.92A5.5 5.5 0 0 0 7.1 8.5 3.5 3.5 0 0 0 7 18Z"></path><path d="M12 15v-5"></path><path d="m9.5 12.5 2.5-2.5 2.5 2.5"></path></svg>',
@@ -135,7 +135,7 @@ export function renderSkillsCategoriesHtml(
             <div class="rounded-xl border px-2.5 pt-3.5 pb-2.5 flex flex-col items-center justify-center transition-colors duration-150 ${
               isSelected
                 ? palette.cardSelected
-                : 'bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#C7D3EA] dark:hover:border-[#5E4750]'
+                : 'bg-[#FDF7F8] dark:bg-[#140F12] border-[#EAD6DC] dark:border-[#33262D] hover:border-[#D3AEBA] dark:hover:border-[#5C3D4B]'
             }">
               <div class="flex flex-col items-center justify-center w-full">
                 <div class="animate-orb-bounce" style="--orb-duration:${duration}s; --orb-delay:${delay}s;">
@@ -190,7 +190,7 @@ export function renderSkillsCategoriesHtml(
         .join('');
 
       return `
-        <div class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] rounded-2xl p-5 md:p-6">
+        <div class="bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] rounded-2xl p-5 md:p-6 shadow-[0_14px_34px_-22px_rgba(190,75,114,0.22)]">
           <div class="flex items-center justify-between gap-4 pb-4 mb-4 border-b border-[#F4E6EA] dark:border-[#2D2228]">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 ${palette.cardIconBox}">
@@ -238,12 +238,12 @@ const PROJECT_CAT_STYLES: Record<
 };
 
 const BAR_COLORS = [
-  '#BE4B72',
-  '#3D4E81',
-  '#2F7A70',
+  '#B94E72',
+  '#455A8E',
+  '#3B7D72',
   '#7A4988',
-  '#A63D61',
-  '#5165A1',
+  '#C86588',
+  '#5A70AA',
 ];
 
 export function renderProjectMetricsHtml(
@@ -275,38 +275,66 @@ export function renderProjectMetricsHtml(
     .sort((a, b) => b.count - a.count || a.tech.localeCompare(b.tech));
 
   const top = rows[0];
-  const maxCount = Math.max(...rows.map((r) => r.count), 1);
+  const axisMax = Math.max(categoryProjects.length, 4);
+  const step = axisMax <= 4 ? 1 : 2;
+  const ticks: number[] = [];
+  for (let v = axisMax; v >= 0; v -= step) {
+    ticks.push(v);
+  }
+  if (ticks[ticks.length - 1] !== 0) {
+    ticks.push(0);
+  }
+
+  const gridLinesHtml = ticks
+    .map((tickVal) => {
+      const bottomPct = (tickVal / axisMax) * 100;
+      const isBaseline = tickVal === 0;
+      return `
+        <div class="absolute left-0 right-0 flex items-center pointer-events-none" style="bottom:${bottomPct}%; transform:translateY(50%);">
+          <span class="w-7 pr-2 text-right font-mono-code text-[11px] tabular-nums text-[#665058] dark:text-[#B59EA7]">${tickVal}</span>
+          <div class="flex-1 ${
+            isBaseline
+              ? 'border-t border-[#E5C6D0] dark:border-[#3D2C35]'
+              : 'border-t border-dashed border-[#F4E6EA] dark:border-[#2D2228]'
+          }"></div>
+        </div>
+      `;
+    })
+    .join('');
 
   const barsHtml = rows
     .map((row, idx) => {
       const color = BAR_COLORS[idx % BAR_COLORS.length];
-      const heightPct = Math.max(18, Math.round((row.count / maxCount) * 100));
+      const heightPct = Math.max(4, Math.round((row.count / axisMax) * 100));
       const active = selectedTech === row.tech;
       const dimmed = selectedTech !== null && !active;
 
       return `
-        <button
-          type="button"
-          data-metric-tech="${escapeHtml(row.tech)}"
-          aria-pressed="${active ? 'true' : 'false'}"
-          title="${escapeHtml(row.tech)}: ${row.count} of ${categoryProjects.length} projects (${row.pct}%)"
-          class="group flex flex-col items-center justify-end h-full min-w-[54px] flex-1 focus:outline-none"
-        >
-          <span class="text-[11px] font-mono-code tabular-nums font-semibold mb-1.5 text-[#4D3B42] dark:text-[#D5C2C9] group-hover:text-[#BE4B72] dark:group-hover:text-[#F2A7C0]">
-            ${row.count}
-          </span>
-          <span class="w-full max-w-[44px] h-[140px] flex items-end justify-center rounded-lg bg-[#FAF0F2]/70 dark:bg-[#140F12]/70 p-1">
+        <div class="relative flex-1 min-w-[58px] h-full flex flex-col items-center">
+          <button
+            type="button"
+            data-metric-tech="${escapeHtml(row.tech)}"
+            data-metric-count="${row.count}"
+            data-metric-total="${categoryProjects.length}"
+            data-metric-pct="${row.pct}"
+            data-metric-titles="${escapeHtml(JSON.stringify(row.titles))}"
+            aria-pressed="${active ? 'true' : 'false'}"
+            aria-label="${escapeHtml(row.tech)}: ${row.count} of ${categoryProjects.length} projects (${row.pct}%)"
+            class="group relative w-full h-full flex items-end justify-center px-1.5 rounded-lg transition-colors duration-150 hover:bg-[#FAF0F2] dark:hover:bg-[#2A1D24] focus:outline-none ${
+              active ? 'bg-[#FAF0F2] dark:bg-[#2A1D24]' : ''
+            }"
+          >
             <span
-              class="w-full rounded-md transition-all duration-200 group-hover:brightness-110 ${
-                active ? 'ring-2 ring-[#1F171A] dark:ring-white' : ''
+              class="w-full max-w-[44px] rounded-t-lg transition-all duration-200 shadow-sm ${
+                active ? 'ring-2 ring-[#BE4B72] dark:ring-[#F2A7C0]' : ''
               }"
-              style="height:${heightPct}%; background:${color}; opacity:${dimmed ? '0.32' : '0.92'};"
+              style="height:${heightPct}%; background:${color}; opacity:${dimmed ? '0.28' : '0.95'};"
             ></span>
-          </span>
-          <span class="mt-2 text-[11px] font-mono-code text-[#4D3B42] dark:text-[#D5C2C9] text-center leading-tight truncate max-w-full">
+          </button>
+          <span class="pointer-events-none absolute top-full left-1/2 mt-2.5 -translate-x-[65%] -rotate-[18deg] origin-top-right font-mono-code text-[11px] text-[#4D3B42] dark:text-[#D5C2C9] whitespace-nowrap">
             ${escapeHtml(row.tech)}
           </span>
-        </button>
+        </div>
       `;
     })
     .join('');
@@ -327,7 +355,7 @@ export function renderProjectMetricsHtml(
           <p class="text-xs sm:text-sm text-[#665058] dark:text-[#B59EA7]">
             Technology stack distribution across <span class="font-medium text-[#1F171A] dark:text-[#F8EFF2]">${categoryProjects.length} ${
               activeCategory === 'All' ? 'deployed projects' : `${escapeHtml(activeCategory)} projects`
-            }</span>. Click any bar to filter matching cards below.
+            }</span>. Hover to inspect projects or click any bar to filter matching cards below.
           </p>
         </div>
       </div>
@@ -348,14 +376,35 @@ export function renderProjectMetricsHtml(
         </div>
         ${
           selectedTech
-            ? `<button type="button" data-clear-tech-filter class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-[#E5C6D0] dark:border-[#3D2C35] bg-[#FAF0F2] dark:bg-[#2A1D24] text-[#BE4B72] dark:text-[#F2A7C0] hover:border-[#BE4B72] transition-colors whitespace-nowrap shrink-0">Clear: ${escapeHtml(selectedTech)}</button>`
+            ? `<button type="button" data-clear-tech-filter class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-[#EAD6DC] dark:border-[#3D2C35] bg-[#FAF0F2] dark:bg-[#2A1D24] text-[#BE4B72] dark:text-[#F2A7C0] hover:border-[#BE4B72] dark:hover:border-[#F2A7C0] transition-colors whitespace-nowrap shrink-0">Clear: ${escapeHtml(selectedTech)}</button>`
             : ''
         }
       </div>
     </div>
 
-    <div class="flex items-end gap-2 sm:gap-3 overflow-x-auto pb-2 pt-2" role="img" aria-label="Technology stack bar chart">
-      ${barsHtml}
+    <div id="metrics-chart-stage" class="relative w-full" role="img" aria-label="Technology stack bar chart">
+      <div class="w-full pt-3 pb-14 overflow-x-auto">
+        <div class="relative min-w-[560px] h-[200px]">
+          ${gridLinesHtml}
+          <div class="relative z-10 h-full pl-8 pr-2 flex items-end gap-2 sm:gap-3">
+            ${barsHtml}
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Hover Tooltip Card -->
+      <div
+        id="metrics-hover-tooltip"
+        role="tooltip"
+        class="pointer-events-none hidden absolute z-30 w-max max-w-[305px] rounded-xl border border-[#E5C6D0] dark:border-[#4A323E] bg-white/95 dark:bg-[#1D161A]/95 backdrop-blur-md p-3.5 shadow-[0_18px_40px_-14px_rgba(190,75,114,0.28)] transition-all duration-150"
+      >
+        <div class="flex items-center justify-between gap-4 border-b border-[#F4E6EA] dark:border-[#2D2228] pb-2 mb-2">
+          <span id="mtt-tech" class="font-mono-code text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2]"></span>
+          <span id="mtt-ratio" class="tabular-nums text-xs font-semibold text-[#BE4B72] dark:text-[#F2A7C0]"></span>
+        </div>
+        <p class="text-[11px] font-medium text-[#665058] dark:text-[#B59EA7] mb-1">Used in:</p>
+        <ul id="mtt-projects" class="space-y-0.5 text-xs text-[#4D3B42] dark:text-[#D5C2C9]"></ul>
+      </div>
     </div>
   `;
 }
@@ -384,17 +433,17 @@ export function renderProjectsGridHtml(
           : 'md:col-span-6';
 
       return `
-        <div class="${spanClass}">
-          <div data-tilt="4.5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] ring-1 ring-inset ring-[#F7E6EA] dark:ring-[#2E2128] hover:border-[#3D4E81] dark:hover:border-[#8FA4E8] rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_10px_28px_-18px_rgba(190,75,114,0.18)]">
+        <div class="${spanClass} bento-reveal" data-bento-card>
+          <div data-tilt="4.5" class="tilt-card group h-full bg-white dark:bg-[#1D161A] border border-[#E5C6D0] dark:border-[#3D2C35] hover:border-[#BE4B72] dark:hover:border-[#F2A7C0] rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_14px_34px_-22px_rgba(190,75,114,0.22)]">
             <div class="tilt-sheen" aria-hidden="true"></div>
             <article class="h-full flex flex-col justify-between">
               <div>
-                <div class="p-3 pb-0">
+                <div class="p-3 bg-[#FDF7F8] dark:bg-[#140F12]">
                   <button
                     type="button"
                     data-open-project="${escapeHtml(project.id)}"
                     aria-label="Open ${escapeHtml(project.title)} case study drawer"
-                    class="relative block w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2] dark:bg-[#2A1D24] text-left"
+                    class="relative block w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#EAD6DC] dark:border-[#33262D] bg-[#FAF0F2] dark:bg-[#140F12] text-left"
                   >
                     <img
                       src="${escapeHtml(project.imageSrc)}"
@@ -402,13 +451,13 @@ export function renderProjectsGridHtml(
                       loading="lazy"
                       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     />
-                    <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#1F171A]/85 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                    <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#1F171A] dark:text-[#F8EFF2] bg-white/95 dark:bg-[#1D161A]/95 border border-[#E5C6D0] dark:border-[#3D2C35] backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                       Open Drawer
                     </span>
                   </button>
                 </div>
 
-                <div class="p-6 space-y-4">
+                <div class="p-6 space-y-3.5">
                   <div class="flex items-center justify-between gap-3">
                     <div class="flex flex-wrap items-center gap-2 text-xs text-[#665058] dark:text-[#B59EA7]">
                       <span class="font-semibold ${catStyle.labelText}">${escapeHtml(project.category)}</span>
@@ -439,7 +488,7 @@ export function renderProjectsGridHtml(
                 </div>
               </div>
 
-              <div class="px-6 pb-6 pt-4 border-t border-[#F4E6EA] dark:border-[#2D2228] space-y-4">
+              <div class="px-6 py-4 bg-[#FDF7F8] dark:bg-[#140F12] border-t border-[#F4E6EA] dark:border-[#2D2228] space-y-3.5">
                 <p class="text-xs font-mono-code text-[#3D4E81] dark:text-[#8FA4E8] leading-relaxed">
                   ${escapeHtml(project.techStack.join(' · '))}
                 </p>

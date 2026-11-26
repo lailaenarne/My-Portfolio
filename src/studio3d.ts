@@ -184,10 +184,10 @@ export function initInteractive3DStudio(
 
   const scene = new THREE.Scene();
   const isInitiallyDark = document.documentElement.classList.contains('dark');
-  const lightBg = new THREE.Color('#F9EEF2');
-  const darkBg = new THREE.Color('#161014');
+  const lightBg = new THREE.Color('#FAF0F4');
+  const darkBg = new THREE.Color('#140F12');
   scene.background = (isInitiallyDark ? darkBg : lightBg).clone();
-  scene.fog = new THREE.FogExp2(isInitiallyDark ? 0x161014 : 0xf9eef2, 0.042);
+  scene.fog = new THREE.FogExp2(isInitiallyDark ? 0x140f12 : 0xfaf0f4, 0.045);
 
   const pmremGenerator = new THREE.PMREMGenerator(renderer);
   const roomEnv = new RoomEnvironment();
@@ -251,9 +251,9 @@ export function initInteractive3DStudio(
   const floorGeo = track(new THREE.CircleGeometry(14, 64));
   const floorMat = track(
     new THREE.MeshStandardMaterial({
-      color: isInitiallyDark ? 0x1c1419 : 0xf4e3e9,
-      roughness: 0.9,
-      metalness: 0.05,
+      color: isInitiallyDark ? 0x1c1419 : 0xf4e4eb,
+      roughness: 0.88,
+      metalness: 0.08,
     })
   );
   const floorMesh = new THREE.Mesh(floorGeo, floorMat);
@@ -310,9 +310,9 @@ export function initInteractive3DStudio(
   ];
   const pedestalMat = track(
     new THREE.MeshStandardMaterial({
-      color: isInitiallyDark ? 0x291e24 : 0xfff7fa,
-      roughness: 0.42,
-      metalness: 0.14,
+      color: isInitiallyDark ? 0x2b2026 : 0xfff8fa,
+      roughness: 0.38,
+      metalness: 0.22,
     })
   );
   const pedestal = new THREE.Mesh(
@@ -597,8 +597,8 @@ export function initInteractive3DStudio(
     if (scene.fog instanceof THREE.FogExp2) {
       scene.fog.color.copy(targetBg);
     }
-    floorMat.color.setHex(dark ? 0x1c1419 : 0xf4e3e9);
-    pedestalMat.color.setHex(dark ? 0x291e24 : 0xfff7fa);
+    floorMat.color.setHex(dark ? 0x1c1419 : 0xf4e4eb);
+    pedestalMat.color.setHex(dark ? 0x2b2026 : 0xfff8fa);
     floorRingMat.color.setHex(dark ? 0xf2a7c0 : 0xbe4b72);
   };
 

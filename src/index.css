@@ -61,15 +61,15 @@ html {
 /* Layered Architectural Blueprint Grid + Subtle Pastel Dot Matrix */
 .bg-pastel-blueprint {
   background-image:
-    radial-gradient(rgba(190, 75, 114, 0.16) 1px, transparent 1px),
-    linear-gradient(to right, rgba(214, 152, 173, 0.11) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(214, 152, 173, 0.11) 1px, transparent 1px);
+    radial-gradient(rgba(190, 75, 114, 0.14) 1px, transparent 1px),
+    linear-gradient(to right, rgba(190, 75, 114, 0.065) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(190, 75, 114, 0.065) 1px, transparent 1px);
   background-size: 24px 24px, 72px 72px, 72px 72px;
 }
 
 .dark .bg-pastel-blueprint {
   background-image:
-    radial-gradient(rgba(242, 167, 192, 0.14) 1px, transparent 1px),
+    radial-gradient(rgba(242, 167, 192, 0.15) 1px, transparent 1px),
     linear-gradient(to right, rgba(242, 167, 192, 0.06) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(242, 167, 192, 0.06) 1px, transparent 1px);
   background-size: 24px 24px, 72px 72px, 72px 72px;
@@ -77,12 +77,12 @@ html {
 
 /* Subtle dot-grid accent for Hero band */
 .bg-pastel-grid {
-  background-image: radial-gradient(rgba(190, 75, 114, 0.14) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(190, 75, 114, 0.12) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
 .dark .bg-pastel-grid {
-  background-image: radial-gradient(rgba(242, 167, 192, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(242, 167, 192, 0.14) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
@@ -272,6 +272,133 @@ html {
   opacity: 1;
 }
 
+/* Staggered Bento Project Grid Scroll-Reveal */
+.bento-reveal {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  transition:
+    opacity 620ms cubic-bezier(0.16, 1, 0.3, 1) var(--bento-delay, 0ms),
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1) var(--bento-delay, 0ms);
+}
+
+.bento-reveal:not(.is-visible) {
+  will-change: opacity, transform;
+}
+
+.bento-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Realistic Iridescent Soap / Glass Bubbles */
+@keyframes bubble-membrane {
+  0%, 100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  33% {
+    border-radius: 53% 47% 51% 49% / 48% 52% 48% 52%;
+  }
+  66% {
+    border-radius: 48% 52% 47% 53% / 52% 48% 53% 47%;
+  }
+}
+
+@keyframes twinkle-star {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.12) rotate(12deg);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle-star var(--twinkle-duration, 4.5s) ease-in-out var(--twinkle-delay, 0s) infinite;
+}
+
+.realistic-bubble {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.14) 18%, transparent 40%),
+    radial-gradient(circle at 75% 78%, rgba(126, 211, 198, 0.24) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(242, 167, 192, 0.24) 76%, rgba(143, 164, 232, 0.34) 90%, rgba(255, 255, 255, 0.65) 100%);
+  box-shadow:
+    inset 0 8px 18px rgba(255, 255, 255, 0.72),
+    inset -6px -10px 18px rgba(190, 75, 114, 0.2),
+    inset 6px -6px 14px rgba(143, 164, 232, 0.22),
+    0 10px 22px -10px rgba(190, 75, 114, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  animation:
+    bubble-rise var(--bubble-duration, 18s) linear var(--bubble-delay, 0s) infinite,
+    bubble-membrane 6s ease-in-out var(--bubble-delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+.dark .realistic-bubble {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.38) 0%, rgba(242, 167, 192, 0.08) 20%, transparent 42%),
+    radial-gradient(circle at 75% 78%, rgba(126, 211, 198, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(242, 167, 192, 0.16) 76%, rgba(143, 164, 232, 0.22) 90%, rgba(255, 255, 255, 0.28) 100%);
+  box-shadow:
+    inset 0 6px 14px rgba(255, 255, 255, 0.28),
+    inset -6px -10px 16px rgba(190, 75, 114, 0.24),
+    inset 6px -6px 14px rgba(126, 211, 198, 0.2),
+    0 12px 24px -10px rgba(0, 0, 0, 0.45);
+  border-color: rgba(242, 167, 192, 0.28);
+}
+
+.realistic-bubble::before {
+  content: '';
+  position: absolute;
+  top: 13%;
+  left: 17%;
+  width: 28%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.28) 65%, transparent 100%);
+  transform: rotate(-34deg);
+  pointer-events: none;
+}
+
+.realistic-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 14%;
+  right: 18%;
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.78) 0%, rgba(126, 211, 198, 0.35) 65%, transparent 100%);
+  pointer-events: none;
+}
+
+.realistic-bubble--indigo {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.14) 18%, transparent 40%),
+    radial-gradient(circle at 75% 78%, rgba(242, 167, 192, 0.22) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(143, 164, 232, 0.26) 76%, rgba(126, 211, 198, 0.28) 90%, rgba(255, 255, 255, 0.65) 100%);
+}
+
+.realistic-bubble--sage {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.14) 18%, transparent 40%),
+    radial-gradient(circle at 75% 78%, rgba(213, 166, 230, 0.22) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(126, 211, 198, 0.26) 76%, rgba(242, 167, 192, 0.24) 90%, rgba(255, 255, 255, 0.65) 100%);
+}
+
+.realistic-bubble--lilac {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.14) 18%, transparent 40%),
+    radial-gradient(circle at 75% 78%, rgba(143, 164, 232, 0.22) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(213, 166, 230, 0.28) 76%, rgba(242, 167, 192, 0.26) 90%, rgba(255, 255, 255, 0.65) 100%);
+}
+
+.realistic-bubble--bokeh {
+  filter: blur(1.5px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -285,8 +412,15 @@ html {
   .animate-float-gentle,
   .animate-packet-slide,
   .animate-page-in,
-  .animate-blink-cursor {
+  .animate-blink-cursor,
+  .animate-twinkle,
+  .realistic-bubble {
     animation: none !important;
+  }
+  .bento-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   *,
   *::before,
